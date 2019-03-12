@@ -1,0 +1,1 @@
+# This is a grade record keeping app, intended for teachers.
