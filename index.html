@@ -5,34 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Grades</title>
-    <script src="dev_index.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-    <div class="container">        
-        <table align="center">
-            <tr>
-                <td colspan="12" align="center"><h1>Google</h1></td>
+    <div style="margin: auto" class="table_container">        
+        <table align="center" id="table_id">
+            <thead>
+            <tr id="fart">
+                <td colspan="12" align="center" style="background-color:brown"><h1>Communications 101</h1></td>
             </tr>
+        </thead>
             <colgroup>
                 <col style="background-color: rgb(255, 81, 0)">
                 <col style="background-color: rgb(12, 247, 12)">
                 <col span="11" style="background-color: rgb(150, 247, 23)">
             </colgroup>
             <tr style="background-color: rgb(255, 81, 0)">
-                <th>STUDENT</th>
-                <th>TOTAL SCORE</th>
+                <th></th>
+                <th>TOTAL POSSIBLE</th>
                 <th>MJ Cole</th>
                 <th>Koryn Schmoryn</th>
                 <th>Patrick Schmatrick</th>
                 <th>Bo Burgunder</th>
-                <th>Clint Benjamin</th>
-                <th>Barry Bomarry</th>
+                <th>Clint Schmenjamin</th>
+                <th>Ellie Schmellie</th>
+                <th>Asher Schmasher</th>
                 <th>Amanda Hugenkiss</th>
-                <th>Bilbo Baggins</th>
+                <th>Pippa Schmippa</th>
                 <th>Taran Wanderer</th>
-                <th>Asher Basher</th>
             </tr>
             <tr>
                 <th class="headerCorrect">Commonly Used words quiz</th>
@@ -62,6 +63,7 @@
                 <td>50</td>
                 <td>49</td>
             </tr>
+            <!--
             <tr>
                 <th class="headerCorrect">Essay</th>
                 <th class="scoreHeaderCorrect">102 / 102</th>
@@ -75,6 +77,7 @@
                 <td>39</td>
                 <td>50</td>
                 <td>49</td>
+            </tr>
             <tr>
                 <th class="headerCorrect">Midterm Exam</th>
                 <th class="scoreHeaderCorrect">42 / 42</th>
@@ -87,7 +90,8 @@
                 <td>37</td>
                 <td>39</td>
                 <td>50</td>
-                <td>49</td>
+                <td>49</td> 
+            </tr>-->
             <tr>
                 <th class="headerCorrect">Final Exam</th>
                 <th class="scoreHeaderCorrect">300 / 300</th>
@@ -101,11 +105,12 @@
                 <td>39</td>
                 <td>50</td>
                 <td>49</td>
-            <tr>
+            </tr>
+            <tr id="poop">
                 <th class="headerCorrect">Persuasive Essay</th>
                 <th class="scoreHeaderCorrect">10 / 10</th>
                 <td>41</td>
-                <td>39</td>
+                <td><input type="text"></input></td>
                 <td>9</td>
                 <td>48</td>
                 <td>16</td>
@@ -114,6 +119,7 @@
                 <td>39</td>
                 <td>50</td>
                 <td>49</td>
+            </tr>
             <tr>
                 <th class="headerCorrect">Chapter 3 Exam</th>
                 <th class="scoreHeaderCorrect">100 / 100</th>
@@ -128,12 +134,12 @@
                 <td>50</td>
                 <td>49</td>
             </tr>
-            <tr>
+            <tr id="death">
                 <th class="headerCorrect">Chapter 42 Exam</th>
                 <th class="scoreHeaderCorrect">420 / 420</th>
                 <td>41</td>
                 <td>110</td>
-                <td>9</td>
+                <td><button onclick="myFunction()">Try it</button></td>
                 <td>239</td>
                 <td>16</td>
                 <td>24</td>
@@ -145,20 +151,30 @@
             <tr>
                 <th class="total">TOTAL</th>
                 <th class="total">2000</th>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
-                <td class="studentTotal">1234</td>
+                <td class="studentTotal"><h4>1234</h4></td>
+                <td class="studentTotal"><h4>1234</h4></td>
+                <td class="studentTotal" id="fuct"><h4>1234</h4></td>
+                <td class="studentTotal"><h4>1234</h4></td>
+                <td class="studentTotal"><h4>1234</h4></td>
+                <td class="studentTotal"><h4>1234</h4></td>
+                <td class="studentTotal"><h4>1234</h4></td>
+                <td class="studentTotal"><h4>1234</h4></td>
+                <td class="studentTotal"><h4>1234</h4></td>
+                <td class="studentTotal"><h4>1234</h4></td>
             </tr>
         </table> 
+        <button onclick="myFunction()">Try it</button>
+
+    <div>
+        <p class="shite"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero rem qui sed consequatur iure nisi eum laboriosam non, atque, ab unde blanditiis iusto, quas nesciunt soluta! Quod facilis vitae nam.
+
+        </p>
+    </div>
+
     </div>
     </div>
+    <script src="dev_index.js"></script>
+
 </body>
 </html>
 
