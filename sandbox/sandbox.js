@@ -116,6 +116,7 @@ addClassButton.addEventListener('click', () => {
     console.log(studentTotal);
 
     const secondTh = document.createElement("th");
+    console.log(studentNameRow);
     studentNameRow.appendChild(secondTh); 
     const firstStudent = secondTh.textContent = "Sally Forth";
     console.log(firstStudent);
@@ -142,8 +143,54 @@ addClassButton.addEventListener('click', () => {
     //console.log(tableHeader);
     console.log(document.querySelector("#classTable"));
 
+    console.log(studentNameRow);
+
+    console.log(studentNameRow);
+
+    console.log(document.querySelector('#addClassButton'));
+    console.log(document.getElementById('addClassButton'));
+
+    document.getElementById('addScoreButton').addEventListener("click", () => {
+        console.log(document.getElementById('studentNamesRow'));
+        console.log("newStudent working first log");
+         function newStudent(parent) {
+             console.log('newStudent working second log');
+             return (element) => {
+                 parent.appendChild(document.createElement(`${element}`));
+            }
+         };
+        
+         newStudent(studentNameRow)("th");
+    });
+    
+    
+   
+
 });
 
+//document.getElementById('addScoreButton').addEventListener("click", () => {
+    //console.log(document.getElementById('studentNamesRow'));
+    //console.log("newStudent working first log");
+    // function newStudent(parent) {
+    //     console.log('newStudent working second log');
+    //     return (element) => {
+    //         parent.appendChild(document.createElement(`${element}`));
+    //     }
+    // };
+    
+    // newStudent(studRows)("th");
+//});
 
 
-//setAttribCell("id", "row_changed");
+
+const newAttrib = (parent) => {
+    console.log('newAttrib working');
+    return (key, value) => {
+       parent.setAttribute(`${key}`, `${value}`);
+    }
+};
+
+//var newStudentRowElement = newAttrib(studentNameRow);
+//newStudentRowElement("class", "fart");
+
+
