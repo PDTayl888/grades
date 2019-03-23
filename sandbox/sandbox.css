@@ -1,6 +1,6 @@
 
 body {
-    color: purple;
+    color: blue;
 }
 
 .table_container {
@@ -14,13 +14,13 @@ body {
     box-shadow: 20px 14px #888888;
 }
 
-
 table {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 22px;
-    border-collapse: collapse;
+    border-collapse: separate;
     text-align: center;
     width: 100%;
+    height: 100%;
 }
 
 th {
@@ -39,10 +39,8 @@ td {
     background-color: rgb(255, 81, 0);
 }
 
-
-
 #thFirst {
-    border: 5px dotted yellow;
+    border: 3px dotted rgb(25, 144,5);
 }
 
 #row_2 {
