@@ -1,3 +1,4 @@
+
 //console.log('fart test');
 //console.log("second fart test");
 
@@ -76,9 +77,6 @@ const tableCreator = {
     addChildTo: function(parent) {
         console.log('addChildTo working');   
             return function(newChild) {
-                console.log(`${newChild} of addChildTo ${parent}`); 
-                console.log(parent);
-                console.log(newChild);
             parent.appendChild(newChild);
         }
     },
@@ -154,19 +152,18 @@ document.getElementById('addClassButton').addEventListener('click', () => {
 
     // CREATE COLUMN
         const colOne = tableCreator.newElement("col");
-        tableCreator.setElementAttributeOf(colOne)("style", "background-color: green");
+        tableCreator.setElementAttributeOf(colOne)("style", "background-color: orange");
         tableCreator.addChildTo(classTable)(colOne);
-        console.log(colOne);
 
     // CREATE SECOND COLUMN
         const colTwo = tableCreator.newElement("col");
         tableCreator.setElementAttributeOf(colTwo)("style", "background-color: purple");
-        classTable.appendChild(colTwo);
+        tableCreator.addChildTo(classTable)(colTwo);
         tableCreator.addChildTo(classTable)(colTwo);
 
     // CREATE THIRD COLUMN
         const colThree = tableCreator.newElement("col");
-        tableCreator.setElementAttributeOf(colThree)("span", "3");
+        tableCreator.setElementAttributeOf(colThree)("span", "100");
         tableCreator.setElementAttributeOf(colThree)("style", "background-color: orange");
         tableCreator.addChildTo(classTable)(colThree);
 
@@ -179,63 +176,40 @@ document.getElementById('addClassButton').addEventListener('click', () => {
         tableCreator.setElementAttributeOf(classNameHeaderTag)("style", "background-color: brown");
         tableCreator.addTextContentTo(classNameHeaderTag)("Communications 101");
         tableCreator.addChildTo(firstTableHeader)(classNameHeaderTag);
-        console.log(firstTableHeader);
-        console.log(classNameHeaderTag);
-
-    // CREATE STUDENT NAME ROW
-        const studentNameRow = tableCreator.newElement("tr");
-        tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
-        tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
-        tableCreator.addChildTo(classTable)(studentNameRow);
-    
-    // CREATE HEADER TAG
-        //const headerTag = document.createElement("th");
-        const headerTag = tableCreator.newElement("th");
-        //studentNameRow.appendChild(headerTag);
-        tableCreator.addChildTo(studentNameRow)(headerTag);
-        //var textnode = document.createTextNode("Water");
-    
-        //headerTag.setAttribute("id","thFirst");
-        headerTag.setAttribute("style", "width: 20px")
-        //headerTag.appendChild(textnode);
-        headerTag.innerText = "";
-    
-    // CREATE th ELEMENT
-        const totalTh = tableCreator.newElement("th");
-        //studentNameRow.appendChild(totalTh); 
-        tableCreator.addChildTo(studentNameRow)(totalTh);
-        //const studentTotal = totalTh.textContent = "TOTAL";
-        const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
-        console.log(studentTotal);
 
     // CREATE ADD STUDENT BUTTON
         const studentButtonDiv = document.getElementById("tableButtonDiv");
-        console.log(studentButtonDiv);
         const addStudentButton = tableCreator.newElement("button");
-        tableCreator.addTextContentTo(addStudentButton)("ADD STUDENT");
         tableCreator.setElementAttributeOf(addStudentButton)("id", "addStudentButton");
+        tableCreator.addTextContentTo(addStudentButton)("ADD STUDENT");
         tableCreator.addChildTo(studentButtonDiv)(addStudentButton);
-
-
-
-
-
-
-
-        addStudentButton.addEventListener("click", () => {
-            // ANOTHER th ELEMENT
-                const secondTh = tableCreator.newElement("th");
-                console.log(studentNameRow);
-                tableCreator.addChildTo(studentNameRow)(secondTh);
-                const firstStudent = tableCreator.addTextContentTo(secondTh)("Sally Forth");
-                assignmentsArray.forEach((assignment) => {
-                    console.log(assignment);
-                    tableCreator.addCellTo(assignment)();
-                });
-                
-                
-            });
 });
+
+
+
+document.getElementById("addStudentButton").addEventListener("click", () => {
+    // ANOTHER th ELEMENT
+        const studentId = studentsArray.length + 1;
+        const secondTh = tableCreator.newElement("th");
+        tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+        tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+        tableCreator.addTextContentTo(secondTh)("Sally Forth");
+        const first = document.getElementsByClassName(`${studentId}`); 
+        studentsArray.push(first);
+        assignmentsArray.forEach((assignment) => {
+            const newCell = tableCreator.addCellTo(assignment)();
+            console.log(newCell);
+            const newInput = tableCreator.newElement("input");
+            console.log(newInput);
+            tableCreator.setElementAttributeOf(newInput)("id", "newInput");
+            console.log(newInput);
+            tableCreator.addChildTo(newCell)(newInput);
+            console.log(document.querySelector('#newInput'));
+        });
+
+        
+});
+
 
 
 
@@ -244,29 +218,75 @@ document.getElementById('addClassButton').addEventListener('click', () => {
 
 
 document.getElementById("addAssignmentButton").addEventListener("click", () => {
+
+    if(assignmentsArray.length < 1) {
+
+    // CREATE STUDENT NAME ROW
+        const studentNameRow = tableCreator.newElement("tr");
+        tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
+        tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
+        tableCreator.addChildTo(classTable)(studentNameRow);
+    
+    // CREATE HEADER TAG
+        const headerTag = tableCreator.newElement("th");
+        tableCreator.addChildTo(studentNameRow)(headerTag);
+        tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+        tableCreator.addTextContentTo(headerTag)("");
+    
+    // CREATE th ELEMENT
+        const totalTh = tableCreator.newElement("th");
+        tableCreator.addChildTo(studentNameRow)(totalTh);
+        const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
+    };
+
+
  
     // CREATE tr ELEMENT
-        let id = assignmentsArray.length + 1;
-        console.log(id);
-        const assignmentRow = document.createElement("tr");
-        assignmentRow.setAttribute("id", "classRow");
-        classTable.appendChild(assignmentRow);
+        let assignmentId = assignmentsArray.length;
+        const assignmentRow = tableCreator.newElement("tr");
+        tableCreator.setElementAttributeOf(assignmentRow)("id", "classRow");
+        tableCreator.addChildTo(classTable)(assignmentRow);
 
         let className = "comm101";
         let studentName = "Gary Indiana";
-        const assignmentName = document.createElement("th");
-        tableCreator.setElementAttributeOf(assignmentRow)("id", `${id}`);
-        tableCreator.setElementAttributeOf(assignmentRow)("data-id", `${id}`);
-        console.log(assignmentRow);
-        const first = document.getElementById(`${id}`); 
-        console.log(first);
+        const assignmentName = tableCreator.newElement("th");
+        tableCreator.setElementAttributeOf(assignmentRow)("id", `${assignmentId}`);
+        tableCreator.setElementAttributeOf(assignmentRow)("data-id", `${assignmentId}`);
+        const first = document.getElementById(`${assignmentId}`); 
         assignmentsArray.push(first);
-        console.log(assignmentsArray);
-        assignmentName.setAttribute("class", "headerCorrect");
-        assignmentName.setAttribute("data-className", `${className}`);
+        tableCreator.setElementAttributeOf(assignmentName)("class", "headerCorrect");
+        tableCreator.setElementAttributeOf(assignmentName)("data-class", `${className}`);
+
         assignmentName.setAttribute("data-studentName", `${studentName}`);
         assignmentRow.appendChild(assignmentName);
         assignmentName.textContent = "COMMONLY CONFUSED WORDS QUIZ";
+        var correctCell = assignmentsArray.length - 1;
+        var lengthStudents = studentsArray.length;
+        console.log(studentsArray);
+
+        
+        const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])();
+
+        const newInput = tableCreator.newElement("input");
+        tableCreator.setElementAttributeOf(newInput)("style", "background-color: purple; border: purple");
+        const newId = assignmentRow.dataset.id;
+        tableCreator.setElementAttributeOf(newInput)("class", `fart${newId}`);
+        tableCreator.addChildTo(newCell)(newInput);
+        const shit = document.querySelector (`.fart${newId}`);
+        tableCreator.setElementAttributeOf(shit)("style", "background-color: purple; border: purple");
+
+
+        for(i=0; i < lengthStudents; i++) {
+            const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])();
+            const newInput = tableCreator.newElement("input");
+            const newId = assignmentRow.dataset.id;
+            tableCreator.setElementAttributeOf(newInput)("class", `fart${newId}`);
+            tableCreator.addChildTo(newCell)(newInput);
+            const shit = document.querySelector (`.fart${newId}`);
+        };
+
+
+
 
 });
 
@@ -338,13 +358,12 @@ document.getElementById("addAssignmentButton").addEventListener("click", () => {
 
 // need to find a way to turn off listener until table is created
 const addRowEventListener = document.getElementById('addScoreButton').addEventListener("click", () => {
-    //console.log(studentNameRow);
     console.log(document.getElementById('studentNamesRow'));
     console.log("newStudent working first log");
      function newStudent(parent) {
          console.log('newStudent working second log');
          return (element) => {
-             parent.appendChild(document.createElement(`${element}`));
+            tableCreator.addChildTo(parent)(`${element}`);
         }
      };
 
@@ -379,4 +398,7 @@ const newAttrib = (parent) => {
 
 //var newStudentRowElement = newAttrib(studentNameRow);
 //newStudentRowElement("class", "fart");
+
+
+
 
