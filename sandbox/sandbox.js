@@ -1,62 +1,11 @@
 
-//console.log('fart test');
-//console.log("second fart test");
-
-
-function addCellRowOne(position) {
-    var row = document.getElementById("row_1");
-    var x = row.insertCell(0);
-    x.setAttribute("style", "border:1px solid orange");
-    x.style.color = "red";
-    x.innerHTML = "CELL ONE";
-}
-
-addCellRowOne(0);
-
-function addCellRowTwo(position) {
-    const row = document.getElementById("row_2");
-    //console.log(row);
-    const poop = row.insertCell(position);
-    //console.log(poop);
-    poop.innerHTML = "New cell";
-}
-
-addCellRowTwo(1);
-addCellRowTwo(1);
- 
-function myFunction() {
-    var row = document.getElementById("myRow");
-    var x = row.insertCell(0);
-    x.innerHTML = "New cell test sherpa";
-}
-
-myFunction();
-
-function setAttribute(attrib, attribValue) {
-    //console.log(`${attrib} test setAttribute ${attribValue}`)
-    const fart = document.querySelector('#row_2');
-    //console.log(fart);
-    fart.setAttribute(`${attrib}`, `${attribValue}`);
-}
-
-//setAttribute("id", "row_changed");
-
-function setAttribCell(attrib, attribValue) {
-    //console.log(`test setAttribCell`);
-    const shit = document.querySelector('#cell');
-    //console.log(shit);
-    shit.setAttribute(`${attrib}`, `${attribValue}`);
-    //console.log(shit.firstChild.data);
-    const dank = shit.firstChild.data = "Satan Santa coincidence";
-    //console.log(dank);
-}
-//setAttribCell("id", "row_changed");
-
 //////////////////////////////////////////////////////////
 
-const forkDiv = document.querySelector('#forknutz');
-console.log(forkDiv);
+const studentsArray = [];
 
+const assignmentsArray = [];
+
+const forkDiv = document.querySelector('#forknutz');
 
 const classDiv = document.querySelector('#classContainer');
 
@@ -125,23 +74,20 @@ const tableCreator = {
 
 
 
-
-
-const studentsArray = [];
-
-const assignmentsArray = [];
-
-assignmentsArray.forEach((item, index) => {
-    tableCreator.addCellTo(item)();
-});
+function init() {
+    console.log("fart shit fart ++++++++++++++++++++++++++");
+    console.log("init function working");
+    document.getElementById('addClassButton').addEventListener('click', addClassToTable);
+    document.getElementById('addStudentButton').addEventListener('click', addStudentToTable);
+    document.getElementById('addAssignmentButton').addEventListener('click', addAssignmentToTable);
+}
 
 
 
 
 
 
- 
-document.getElementById('addClassButton').addEventListener('click', () => {
+function addClassToTable() {
     console.log('addClassButton eventListener is working!');
     
     // CREATE TABLE ELEMENT
@@ -183,45 +129,35 @@ document.getElementById('addClassButton').addEventListener('click', () => {
         tableCreator.setElementAttributeOf(addStudentButton)("id", "addStudentButton");
         tableCreator.addTextContentTo(addStudentButton)("ADD STUDENT");
         tableCreator.addChildTo(studentButtonDiv)(addStudentButton);
-});
 
-
-
-document.getElementById("addStudentButton").addEventListener("click", () => {
-    // ANOTHER th ELEMENT
-        const studentId = studentsArray.length + 1;
-        const secondTh = tableCreator.newElement("th");
-        tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
-        tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
-        tableCreator.addTextContentTo(secondTh)("Sally Forth");
-        const first = document.getElementsByClassName(`${studentId}`); 
-        studentsArray.push(first);
-        assignmentsArray.forEach((assignment) => {
-            const newCell = tableCreator.addCellTo(assignment)();
-            console.log(newCell);
-            const newInput = tableCreator.newElement("input");
-            console.log(newInput);
-            tableCreator.setElementAttributeOf(newInput)("id", "newInput");
-            console.log(newInput);
-            tableCreator.addChildTo(newCell)(newInput);
-            console.log(document.querySelector('#newInput'));
-        });
-
-        
-});
+}
 
 
 
 
-        
 
 
 
-document.getElementById("addAssignmentButton").addEventListener("click", () => {
 
-    if(assignmentsArray.length < 1) {
 
-    // CREATE STUDENT NAME ROW
+ 
+function addStudentToTable() {
+    console.log("assStudent listener is working!");
+    var x = document.getElementById("addStudentInputDiv");
+    var y = document.getElementById("addStudentInputField");
+    const inputValue = document.forms[0][0].value;
+    let inputElement = document.forms[0][0];
+    let inputForm = document.forms[0];
+    console.log(inputElement);
+    console.log(inputForm);
+    console.log(inputValue);
+    console.log(x);
+    console.log(y);
+    console.log(y.value);
+
+    if(assignmentsArray.length < 1 && studentsArray.length < 1) {
+        console.log("first condition test");
+        // CREATE STUDENT NAME ROW
         const studentNameRow = tableCreator.newElement("tr");
         tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
         tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
@@ -237,125 +173,212 @@ document.getElementById("addAssignmentButton").addEventListener("click", () => {
         const totalTh = tableCreator.newElement("th");
         tableCreator.addChildTo(studentNameRow)(totalTh);
         const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
-    };
+                // ADD th ELEMENT TO STUDENT ROW
+                const studentId = studentsArray.length + 1;
+                const secondTh = tableCreator.newElement("th");  
+                tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+    
+                const assignArrayLength = assignmentsArray.length;
+            // SET CLASS OF NEW th ELEMENT
+                tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+            // SET TEXT OF NEW th ELEMENT
+                tableCreator.addTextContentTo(secondTh)("Sally Forth");
+            // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
+                const first = document.getElementsByClassName(`${studentId}`); 
+                studentsArray.push(first);    
+
+    } else if(assignmentsArray.length < 1 && studentsArray.length >= 1) {
+                // ADD th ELEMENT TO STUDENT ROW
+                console.log("second condition test");
+                const studentId = studentsArray.length + 1;
+                const secondTh = tableCreator.newElement("th");  
+                tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+    
+                const assignArrayLength = assignmentsArray.length;
+            // SET CLASS OF NEW th ELEMENT
+                tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+            // SET TEXT OF NEW th ELEMENT
+                tableCreator.addTextContentTo(secondTh)("Sally Forth");
+            // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
+                const first = document.getElementsByClassName(`${studentId}`); 
+                studentsArray.push(first);    
+
+    }
+
+    if(assignmentsArray.length >= 1) {
+        console.log("third condition test");
+
+        // ADD th ELEMENT TO STUDENT ROW
+            const studentId = studentsArray.length + 1;
+            const secondTh = tableCreator.newElement("th");  
+            tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+
+            const assignArrayLength = assignmentsArray.length;
+        // SET CLASS OF NEW th ELEMENT
+            tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+        // SET TEXT OF NEW th ELEMENT
+            tableCreator.addTextContentTo(secondTh)("Sally Forth");
+        // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
+            const first = document.getElementsByClassName(`${studentId}`); 
+            studentsArray.push(first);
+        // ADD CELL WITH INPUT FIELD TO EACH ASSIGNMENT FOR NEW STUDENT
+            assignmentsArray.forEach((assignment, index) => {
+                var indexTwo = index + 2;
+                var indexOne = index + 1;
+
+                const newCell = tableCreator.addCellTo(assignment)(-1);
+                console.log(newCell);
+                tableCreator.setElementAttributeOf(newCell)("class", "score");
+
+                const newInput = tableCreator.newElement("input");
+                tableCreator.setElementAttributeOf(newInput)("class", "score");
+                console.log(newInput);
+                tableCreator.setElementAttributeOf(newInput)("id", `student-${studentId}-assignment-${indexOne}`);
+                const park = document.querySelector(`#student-3-assignment-${assignArrayLength}`);
+                const parkValue = document.querySelector(`#student-1-assignment-1`);
+                console.log(park)
+                //console.log(parkValue.value);
+                    console.log(newInput);
+                tableCreator.addChildTo(newCell)(newInput);
+                console.log(document.querySelector('#newInput'));
+            })
+    }
+}
 
 
- 
+
+
+
+
+
+
+
+
+
+function addAssignmentToTable() {
+    if(assignmentsArray.length < 1 && studentsArray.length < 1) {
+
+        // CREATE STUDENT NAME ROW
+            const studentNameRow = tableCreator.newElement("tr");
+            tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
+            tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
+            tableCreator.addChildTo(classTable)(studentNameRow);
+        
+        // CREATE HEADER TAG
+            const headerTag = tableCreator.newElement("th");
+            tableCreator.addChildTo(studentNameRow)(headerTag);
+            tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+            tableCreator.addTextContentTo(headerTag)("");
+        
+        // CREATE th ELEMENT
+            const totalTh = tableCreator.newElement("th");
+            tableCreator.addChildTo(studentNameRow)(totalTh);
+            const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
+    }
+    
+
+    
+
+
     // CREATE tr ELEMENT
-        let assignmentId = assignmentsArray.length;
+        let assignmentId = assignmentsArray.length - 1 ;
         const assignmentRow = tableCreator.newElement("tr");
         tableCreator.setElementAttributeOf(assignmentRow)("id", "classRow");
         tableCreator.addChildTo(classTable)(assignmentRow);
-
+    
         let className = "comm101";
         let studentName = "Gary Indiana";
+    // CREATE th FOR NEW ASSIGNMENT
         const assignmentName = tableCreator.newElement("th");
+    // SET ATTRIBUTES FOR NEW ASSIGNMENT th
         tableCreator.setElementAttributeOf(assignmentRow)("id", `${assignmentId}`);
         tableCreator.setElementAttributeOf(assignmentRow)("data-id", `${assignmentId}`);
-        const first = document.getElementById(`${assignmentId}`); 
-        assignmentsArray.push(first);
+        console.log(assignmentRow);
+    // PUSH NEW ASSIGNMENT tr ELEMENT TO ASSIGNMENTS ARRAY
+        const addAssignment = document.getElementById(`${assignmentId}`); 
+        assignmentsArray.push(assignmentRow);
         tableCreator.setElementAttributeOf(assignmentName)("class", "headerCorrect");
         tableCreator.setElementAttributeOf(assignmentName)("data-class", `${className}`);
-
-        assignmentName.setAttribute("data-studentName", `${studentName}`);
-        assignmentRow.appendChild(assignmentName);
-        assignmentName.textContent = "COMMONLY CONFUSED WORDS QUIZ";
+    
+        tableCreator.setElementAttributeOf(assignmentName)("data-studentName", `${studentName}`);
+    // ADD NEW ASSIGNMENT th TO NEW ASSIGNMENT ROW
+        tableCreator.addChildTo(assignmentRow)(assignmentName);
+        tableCreator.addTextContentTo(assignmentName)("COMMONLY CONFUSED WORDS QUIZ");
         var correctCell = assignmentsArray.length - 1;
         var lengthStudents = studentsArray.length;
         console.log(studentsArray);
-
-        
-        const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])();
-
+    
+    // ADD PLACEHOLDER FOR TOTAL POSSIBLE POINTS TO NEW ASSIGNMENT ROW
+        const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);    
+        const studentId = studentsArray.length;
+        const assignArrayLength = assignmentsArray.length;
+    
+    
         const newInput = tableCreator.newElement("input");
-        tableCreator.setElementAttributeOf(newInput)("style", "background-color: purple; border: purple");
         const newId = assignmentRow.dataset.id;
+        tableCreator.setElementAttributeOf(newInput)("style", "background-color: purple; border: purple");
+        tableCreator.setElementAttributeOf(newInput)("id", `student-0-assignment-${assignArrayLength}`);
+        console.log(newInput);
+    
         tableCreator.setElementAttributeOf(newInput)("class", `fart${newId}`);
         tableCreator.addChildTo(newCell)(newInput);
         const shit = document.querySelector (`.fart${newId}`);
-        tableCreator.setElementAttributeOf(shit)("style", "background-color: purple; border: purple");
+    //tableCreator.setElementAttributeOf(shit)("style", "background-color: purple; border: purple");
+        // ADD PLACEHOLDER CELLS FOR ASSIGNMENT SCORES FOR EACH STUDENT
+            for(i=0; i < lengthStudents; i++) {
+                const studsLoop = i + 1;
+                console.log(studsLoop);
+                const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);
+                const newInput = tableCreator.newElement("input");
+                tableCreator.setElementAttributeOf(newInput)("id", `student-${studsLoop}-assignment-${assignArrayLength}`);
+                tableCreator.setElementAttributeOf(newInput)("class", "score");
+                tableCreator.setElementAttributeOf(newCell)("class", "score");
 
-
-        for(i=0; i < lengthStudents; i++) {
-            const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])();
-            const newInput = tableCreator.newElement("input");
-            const newId = assignmentRow.dataset.id;
-            tableCreator.setElementAttributeOf(newInput)("class", `fart${newId}`);
+    
             tableCreator.addChildTo(newCell)(newInput);
-            const shit = document.querySelector (`.fart${newId}`);
-        };
+            console.log(document.querySelector(`#student-${studsLoop}-assignment-${assignArrayLength}`));
+            }
+
+
+            if(assignmentsArray.length == 1) {
+
+                    // CREATE STUDENT NAME ROW
+                    const studentNameRow = tableCreator.newElement("tr");
+                    tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
+                    tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
+                    tableCreator.addChildTo(classTable)(studentNameRow);
+                
+                // CREATE HEADER TAG
+                    const headerTag = tableCreator.newElement("th");
+                    tableCreator.addChildTo(studentNameRow)(headerTag);
+                    tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+                    tableCreator.addTextContentTo(headerTag)("");
+                
+                // CREATE th ELEMENT
+                    const totalTh = tableCreator.newElement("th");
+                    tableCreator.addChildTo(studentNameRow)(totalTh);
+                    const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
+
+            }
+
+            
+}
 
 
 
 
-});
+
+        
+
+
+
+document.addEventListener('DOMContentLoaded', init);
 
 
 
 
 
-
-
-//////////////////////////////////////////////////////////////////////////////////////
-//******************************************************************************************** */
-// //     // CREATE STUDENT NAME ROW
-// //     const studentNameRow = tableCreator.newElement("tr");
-// //     tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
-// //     tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
-// //     tableCreator.addChildTo(classTable)(studentNameRow);
-
-// // // CREATE HEADER TAG
-// //     //const headerTag = document.createElement("th");
-// //     const headerTag = tableCreator.newElement("th");
-// //     //studentNameRow.appendChild(headerTag);
-// //     tableCreator.addChildTo(studentNameRow)(headerTag);
-// //     //var textnode = document.createTextNode("Water");
-
-// //     //headerTag.setAttribute("id","thFirst");
-// //     headerTag.setAttribute("style", "width: 20px")
-// //     //headerTag.appendChild(textnode);
-// //     headerTag.innerText = "";
-
-// // // CREATE th ELEMENT
-// //     const totalTh = tableCreator.newElement("th");
-// //     //studentNameRow.appendChild(totalTh); 
-// //     tableCreator.addChildTo(studentNameRow)(totalTh);
-// //     //const studentTotal = totalTh.textContent = "TOTAL";
-// //     const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
-// //     console.log(studentTotal);
-
-// // // ANOTHER th ELEMENT
-// //     //const secondTh = document.createElement("th");
-// //     const secondTh = tableCreator.newElement("th");
-// //     console.log(studentNameRow);
-// //     //studentNameRow.appendChild(secondTh); 
-// //     tableCreator.addChildTo(studentNameRow)(secondTh);
-// //     //const firstStudent = secondTh.textContent = "Sally Forth";
-// //     const firstStudent = tableCreator.addTextContentTo(secondTh)("Sally Forth");
-// //     console.log(firstStudent);
-
-// // // ANOTHER th ELEMENT
-// //     const thirdTh = document.createElement("th");
-// //     studentNameRow.appendChild(thirdTh); 
-// //     const secondStudent = thirdTh.textContent = "Danny Diamond";
-// //     console.log(secondStudent); 
-
-// // // CREATE tr ELEMENT
-// //     const assignmentRow = document.createElement("tr");
-// //     assignmentRow.setAttribute("id", "classRow");
-// //     classTable.appendChild(assignmentRow);
-
-// //     let className = "comm101";
-// //     let studentName = "Gary Indiana";
-// //     const assignmentName = document.createElement("th");
-// //     assignmentName.setAttribute("class", "headerCorrect");
-// //     assignmentName.setAttribute("data-className", `${className}`);
-// //     assignmentName.setAttribute("data-studentName", `${studentName}`);
-// //     assignmentRow.appendChild(assignmentName);
-// //     assignmentName.textContent = "commonly confused words";
-/////////////////////////////////////////////////////////////////
-//************************************************************** */
-
+ 
 // need to find a way to turn off listener until table is created
 const addRowEventListener = document.getElementById('addScoreButton').addEventListener("click", () => {
     console.log(document.getElementById('studentNamesRow'));
@@ -372,33 +395,6 @@ const addRowEventListener = document.getElementById('addScoreButton').addEventLi
 
 
 //////////////////////////////////////////////////////////
-
-
-//document.getElementById('addScoreButton').addEventListener("click", () => {
-    //console.log(document.getElementById('studentNamesRow'));
-    //console.log("newStudent working first log");
-    // function newStudent(parent) {
-    //     console.log('newStudent working second log');
-    //     return (element) => {
-    //         parent.appendChild(document.createElement(`${element}`));
-    //     }
-    // };
-    
-    // newStudent(studRows)("th");
-//});
-
-
-
-const newAttrib = (parent) => {
-    console.log('newAttrib working');
-    return (key, value) => {
-       parent.setAttribute(`${key}`, `${value}`);
-    }
-};
-
-//var newStudentRowElement = newAttrib(studentNameRow);
-//newStudentRowElement("class", "fart");
-
 
 
 
