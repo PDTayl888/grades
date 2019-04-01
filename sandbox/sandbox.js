@@ -92,6 +92,44 @@ const tableCreator = {
 
 
 
+function changeDisplay(idOrClass) {
+    console.log('opOrClose function activated ~`~`~`~`~`~`');
+    console.log(idOrClass);
+    return function(openClose) {
+        console.log(openClose);
+        console.log(document.querySelector(`${idOrClass}`));
+        document.querySelector(`${idOrClass}`).style.display = `${openClose}`;
+        console.log(document.querySelector(`${idOrClass}`).style.display);
+    }
+}
+
+function changeClassName(idOrClass) {
+    console.log('opOrClose function activated ~`~`~`~`~`~`');
+    console.log(idOrClass);
+    return function(openClose) {
+        console.log(openClose);
+        console.log(document.querySelector(`${idOrClass}`));
+        document.querySelector(`${idOrClass}`).className = `${openClose}`;
+        console.log(document.querySelector(`${idOrClass}`).style.display);
+    }
+}
+
+function studentTotal(student) {
+    console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7&&&");
+    var total = 0;
+        for(i=1; i<=assignmentsArray.length; i++) {
+            const score = parseInt(document.querySelector(`#student-${student}-assignment-${i}`).value);
+            total += score;
+        }
+    return total;
+}
+
+function studentOne() {
+    console.log(studentTotal(1));
+}
+
+
+
 
 
 function init() {
@@ -108,31 +146,52 @@ function init() {
     document.getElementById('addAssignmentButton').addEventListener('click', addAssignmentInputFormOpen);
     document.getElementById('addButtonAssignment').addEventListener('click', addAssignmentToTable);
     document.getElementById('cancelButtonAssignment').addEventListener('click', cancelAssignmentInputForm);
-
+    document.querySelector('#totalTest').addEventListener('click', studentOne);
 }
 
+
+
+classDiv.style.display = "none";
+
 function addClassInputFormOpen() {
-console.log("addClassInputFormOpen function was invoked!!!!!!!^^^^!!!!!!!");
+    //document.querySelector('#classContainer').className = "blur";
+    changeClassName("#classContainer")("blur");
+
+    console.log("addClassInputFormOpen function was invoked!!!!!!!^^^^!!!!!!!");
+    document.getElementById("addClassDiv").style.display = "block";
 }
 
 function cancelClassInputForm() {
+    document.querySelector('#classContainer').className = "table_container";
     console.log("cancelClassInputform was invoked!!@#");
+    document.getElementById("addClassDiv").style.display = "none";
 }
 
 function addStudentInputFormOpen() {
     console.log("addStudentInputFormOpen function was invoked!_+_+_+__++_");
+    document.getElementById("addStudentDiv").style.display = "block";
+    changeClassName("#classContainer")("blur");
 }
     
 function cancelStudentInputForm() {
     console.log("cancelStudentInputform was invoked!!@#");
+    document.getElementById("addStudentDiv").style.display = "none";
+    document.querySelector('#classContainer').style.display = "block";
+    document.querySelector('#classContainer').className = "table_container";
 }
 
 function addAssignmentInputFormOpen() {
     console.log("addAssignmentInputFormOpen function was invoked!**********************");
+    document.getElementById("addAssignmentDiv").style.display = "block";
+    changeClassName("#classContainer")("blur");
+    console.log(document.querySelector('#classContainer'));
 }
     
 function cancelAssignmentInputForm() {
     console.log("cancelAssignmentInputform was invoked!!@#@#@#");
+    document.getElementById("addAssignmentDiv").style.display = "none";
+    document.querySelector('#classContainer').style.display = "block";
+    document.querySelector('#classContainer').className = "table_container";
 }
     
     
@@ -141,6 +200,10 @@ function cancelAssignmentInputForm() {
 
 
 function addClassToTable() {
+    classDiv.style.display = "block";
+    document.getElementById("addClassDiv").style.display = "none";
+    document.querySelector('#classContainer').className = "table_container";
+
     console.log('addClassButton eventListener is working!');
     
     // CREATE TABLE ELEMENT
@@ -173,7 +236,8 @@ function addClassToTable() {
         tableCreator.setElementAttributeOf(classNameHeaderTag)("colspan", "100");
         tableCreator.setElementAttributeOf(classNameHeaderTag)("id", "classNameth");
         tableCreator.setElementAttributeOf(classNameHeaderTag)("style", "background-color: brown");
-        const classText = document.getElementById("addClassInputField").value;
+    // ADD TEXT FROM NEW CLASS INPUT FIELD
+        const classText = document.querySelector('#addClassInputField').value;
         tableCreator.addTextContentTo(classNameHeaderTag)(`${classText}`);
         tableCreator.addChildTo(firstTableHeader)(classNameHeaderTag);
 
@@ -203,8 +267,6 @@ function addClassToTable() {
 
 
 
-
-
  
 function addStudentToTable() {
     // console.log("assStudent listener is working!");
@@ -219,10 +281,15 @@ function addStudentToTable() {
     // console.log(x);
     // console.log(y);
     // console.log(y.value);
+    document.querySelector('#classContainer').style.display = "block";
+    document.querySelector('#addStudentDiv').style.display = "none";
+    document.querySelector('#classContainer').className = "table_container";
+
+
 
     if(assignmentsArray.length < 1 && studentsArray.length < 1) {
         console.log("first condition test");
-        // CREATE STUDENT NAME ROW
+    // CREATE STUDENT NAME ROW
         const studentNameRow = tableCreator.newElement("tr");
         tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
         tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
@@ -238,6 +305,24 @@ function addStudentToTable() {
         const totalTh = tableCreator.newElement("th");
         tableCreator.addChildTo(studentNameRow)(totalTh);
         const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
+    }
+    
+            //     // ADD th ELEMENT TO STUDENT ROW
+            //     const studentId = studentsArray.length + 1;
+            //     const secondTh = tableCreator.newElement("th");  
+            //     tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+    
+            //     const assignArrayLength = assignmentsArray.length;
+            // // SET CLASS OF NEW th ELEMENT
+            //     tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+            // // SET TEXT OF NEW th ELEMENT
+            //     tableCreator.addTextContentTo(secondTh)("Sally Forth");
+            // // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
+            //     const first = document.getElementsByClassName(`${studentId}`); 
+            //     studentsArray.push(first);    
+
+    if(assignmentsArray.length < 1 ) {
+                console.log("second condition test");
                 // ADD th ELEMENT TO STUDENT ROW
                 const studentId = studentsArray.length + 1;
                 const secondTh = tableCreator.newElement("th");  
@@ -247,23 +332,10 @@ function addStudentToTable() {
             // SET CLASS OF NEW th ELEMENT
                 tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
             // SET TEXT OF NEW th ELEMENT
-                tableCreator.addTextContentTo(secondTh)("Sally Forth");
-            // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
-                const first = document.getElementsByClassName(`${studentId}`); 
-                studentsArray.push(first);    
-
-    } else if(assignmentsArray.length < 1 && studentsArray.length >= 1) {
-                console.log("second condition test");
-                const studentId = studentsArray.length + 1;
-            // CREATE th HEADER FOR STUDENT NAME
-                const secondTh = tableCreator.newElement("th");      
-                const assignArrayLength = assignmentsArray.length;
-            // SET CLASS OF NEW th ELEMENT
-                tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
-            // SET TEXT OF NEW th ELEMENT
-                tableCreator.addTextContentTo(secondTh)("Sally Forth");
-            // ADD th ELEMENT TO STUDENT ROW
-                tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+                //tableCreator.addTextContentTo(secondTh)("Sally Forth");
+                const assignmentText = document.querySelector('#addStudentInputField').value;
+                tableCreator.addTextContentTo(secondTh)(`${assignmentText}`);
+        
             // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
                 const first = document.getElementsByClassName(`${studentId}`); 
                 studentsArray.push(first);    
@@ -308,13 +380,15 @@ function addStudentToTable() {
                 console.log(document.querySelector('#newInput'));
             })
 
-
             const Id = studentsArray.length + 1;
             // CREATE th HEADER FOR STUDENT TOTAL
                 const studentTotalHeader = tableCreator.newElement("th");  
             // SET CLASS OF NEW th ELEMENT
                 tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${Id}`);
             // SET TEXT OF NEW th ELEMENT
+            console.log(studentTotal(1));
+            console.log(studentTotal(i));
+
                 tableCreator.addTextContentTo(studentTotalHeader)("1299");
             
             // ADD th ELEMENT TO TOTALS ROW
@@ -335,6 +409,13 @@ function addStudentToTable() {
 
 
 function addAssignmentToTable() {
+
+    document.querySelector('#classContainer').style.display = "block";
+    document.querySelector('#addAssignmentDiv').style.display = "none";
+    document.querySelector('#classContainer').className = "table_container";
+
+
+
     if(assignmentsArray.length < 1 && studentsArray.length < 1) {
 
         // CREATE STUDENT NAME ROW
@@ -384,10 +465,12 @@ function addAssignmentToTable() {
     // ADD NEW ASSIGNMENT th TO NEW ASSIGNMENT ROW
         tableCreator.addChildTo(assignmentRow)(assignmentName);
     // ADD TEXT TO ASSIGNMENT HEADER CELL
-        tableCreator.addTextContentTo(assignmentName)("COMMONLY CONFUSED WORDS QUIZ");
-        var correctCell = assignmentsArray.length - 1;
-        var lengthStudents = studentsArray.length;
-        console.log(studentsArray);
+        const assignmentText = document.querySelector('#addAssignmentInputField').value;
+        tableCreator.addTextContentTo(assignmentName)(`${assignmentText}`);
+
+         var correctCell = assignmentsArray.length - 1;
+         var lengthStudents = studentsArray.length;
+         console.log(studentsArray);
     
     // ADD PLACEHOLDER FOR TOTAL POSSIBLE POINTS TO NEW ASSIGNMENT ROW
         const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);    
@@ -445,6 +528,7 @@ function addAssignmentToTable() {
                     const studentTotal = tableCreator.addTextContentTo(totalTh)("1234");
             
 
+//////////  TOTALS ROW CREATION
           
             console.log(`${lengthStudents} + + + + + + + + + + + + `);
             for(i=0; i < lengthStudents; i++) {
@@ -456,7 +540,10 @@ function addAssignmentToTable() {
                 // SET CLASS OF NEW th ELEMENT
                     tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${studentId}`);
                 // SET TEXT OF NEW th ELEMENT
-                    tableCreator.addTextContentTo(studentTotalHeader)("1299");
+                console.log(studentTotal(1));
+                console.log(studentTotal(i));
+                    const finalTotal = studentTotal(i);
+                    tableCreator.addTextContentTo(studentTotalHeader)(`${finalTotal}`);
                 
                 // ADD th ELEMENT TO TOTALS ROW
                     tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
@@ -487,6 +574,4 @@ document.addEventListener('DOMContentLoaded', init);
  
 
 //////////////////////////////////////////////////////////
-
-
 

@@ -9,51 +9,50 @@
 </head>
 <body>
 
-
-    <div id="addClassDiv">
+    <div id="addClassDiv" class="hide">
         <form action="#">
-            <input type="text" id="addClassInputField" />
+            <input type="text" id="addClassInputField" placeholder="class" style="background-color: blue; width: 500px"/>
             <button id="addButtonClass"></button>
             <button id="cancelButtonClass"></button>
         </form>
     </div>  
 
-    <div id="addStudentDiv">
+    <div id="addStudentDiv" class="hide">
         <form action="#">
-            <input type="text" id="addStudentInputField" />
+            <input type="text" id="addStudentInputField" placeholder="student"/>
             <button id="addButtonStudent"></button>
             <button id="cancelButtonStudent"></button>
         </form>
     </div>  
     
-    <div id="addAssignmentDiv">
+    <div id="addAssignmentDiv" class="hide">
         <form action="#">
-            <input type="text" id="addAssignmentInputField" />
+            <input type="text" id="addAssignmentInputField" placeholder="assignment"/>
             <button id="addButtonAssignment"></button>
             <button id="cancelButtonAssignment"></button>
         </form>
     </div>  
 
-    <div style="margin: 50px"></div>
 
+    <div id="officialButtonDiv" style="margin-left: 250px">
 
-    <div class="table_container" style="border: 1px solid white; border-radius: 24px; margin: auto" id="classContainer">                
+        <button id="addAssignmentButton">ADD ASSIGNMENT</button>
+    
+        <button id="addStudentButton">ADD STUDENT</button> 
+        
+    </div>
+    
+    <div id="officialClassButtonDiv">
+
+        <button id="addClassButton">ADD CLASS</button>
+
+        <button id="totalTest">TOTAL TEST</button>
+
     </div>
 
-    <div id="tableButtonDiv"></div>
 
-    <div style="margin: 50px"></div>
+    <div class="table_container" style="border: 1px solid white; border-radius: 24px; margin: auto" id="classContainer"></div>
 
-
-<div id="officialButtonDiv" style="border:1px solid aqua">
-
-    <button id="addAssignmentButton">ADD ASSIGNMENT</button>
-
-    <button id="addStudentButton">ADD STUDENT</button> 
-
-    <button id="addClassButton">ADD CLASS</button>
-
-</div>
 
 
     
