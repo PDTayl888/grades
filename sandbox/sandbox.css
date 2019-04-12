@@ -237,7 +237,7 @@ td {
     border-radius: 22px;
     width: 400px;
     display: none;
-    position: relative;
+    position: relative; 
     z-index: 2;
 }
 

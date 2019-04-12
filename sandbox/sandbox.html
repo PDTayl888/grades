@@ -11,6 +11,15 @@
 </head>
 <body>
 
+        <div id="addAttendanceDiv" class="hide">
+                <form action="#">
+                    <input type="text" id="addAttendanceInputField" placeholder="class" style="background-color: blue; width: 500px" required="true" />
+                    <button id="addButtonAttendance" ></button>
+                    <button id="cancelButtonAttendance"></button>
+                </form>
+            </div>  
+        
+
     <div id="addClassDiv" class="hide">
         <form action="#">
             <input type="text" id="addClassInputField" placeholder="class" style="background-color: blue; width: 500px" required="true" />
@@ -91,17 +100,17 @@
 
         <button id="addClassButton">ADD CLASS</button>
 
-        <button id="totalTest">TOTAL TEST</button>
-
     </div>
-
+ 
 
     <div class="table_container" style="border: 1px solid white; border-radius: 24px; margin: auto" id="classContainer"></div>
 
-    <div id="officialClassButtonDiv">
+
+
+    <div id="officialAttendanceButtonDiv">
 
         <button id="addAttendanceButton">ADD ATTENDANCE</button>
-        
+
     </div>
     
     
