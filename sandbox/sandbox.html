@@ -10,14 +10,32 @@
 
 </head>
 <body>
-
+<!-- ATTENDANCE POP-UP BUTTONS -->
         <div id="addAttendanceDiv" class="hide">
-                <form action="#">
-                    <input type="text" id="addAttendanceInputField" placeholder="class" style="background-color: blue; width: 500px" required="true" />
-                    <button id="addButtonAttendance" ></button>
-                    <button id="cancelButtonAttendance"></button>
-                </form>
-            </div>  
+            <form action="#">
+                <input type="text" id="addAttendanceInputField" placeholder="class" style="background-color: blue; width: 500px" required="true" />
+                <button id="addButtonAttendance" ></button>
+                <button id="cancelButtonAttendance"></button>
+            </form>
+        </div>  
+
+        <div id="addStudentAttendanceDiv" class="hide">
+            <form action="#">
+                <input type="text" id="addAttendanceInputField" placeholder="class" style="background-color: blue; width: 500px" required="true" />
+                <button id="addButtonAttendanceStudent" ></button>
+                <button id="cancelAttendanceButtonStudent"></button>
+            </form>
+        </div>  
+
+        <div id="addDatesAttendanceDiv" class="hide">
+            <form action="#">
+                <input type="text" id="addAttendanceDatesInputField" placeholder="class" style="background-color: blue; width: 500px" required="true" />
+                <button id="addButtonAttendanceDates" ></button>
+                <button id="cancelButtonAttendanceDates"></button>
+            </form>
+        </div>  
+<!-- ###############################   -->
+ 
         
 
     <div id="addClassDiv" class="hide">
@@ -33,6 +51,14 @@
             <input type="text" id="addStudentInputField" placeholder="student" required="true" />
             <button id="addButtonStudent"></button>
             <button id="cancelButtonStudent"></button>
+        </form>
+    </div>  
+
+    <div id="addStudentDivPersist" class="hide">
+        <form action="#">
+            <input type="text" id="addStudentInputFieldPersist" placeholder="student" required="true" />
+            <button id="addButtonStudentPersist"></button>
+            <button id="cancelButtonStudentPersist"></button>
         </form>
     </div>  
     
@@ -54,11 +80,27 @@
             </form>
     </div>  
 
+    <div id="addStudentLabelDivPersist" class="hide">
+            <form action="#">
+                <input type="text" id="addStudentLabelInputFieldPersist" placeholder="class" style="background-color: blue; width: 500px" required="true" />
+                <button id="addButtonStudentLabelPersist" onclick="editStudentLabelPersist()"></button>
+                <button id="cancelButtonStudentLabelPersist" onclick="cancelEditStudentLabelPersist()"></button>
+            </form>
+    </div>  
+
     <div id="addAssignmentLabelDiv" class="hide">
             <form action="#">
                 <input type="text" id="addAssignmentLabelInputField" placeholder="class" style="background-color: blue; width: 500px" required="true" />
                 <button id="addAssignmentStudentLabel" onclick="editAssignmentLabel()"></button>
                 <button id="cancelAssignmentStudentLabel" onclick="cancelEditAssignmentLabel()"></button>
+            </form>
+    </div>   
+
+    <div id="addAssignmentLabelDivPersist" class="hide">
+            <form action="#">
+                <input type="text" id="addAssignmentLabelInputFieldPersist" placeholder="class" style="background-color: blue; width: 500px" required="true" />
+                <button id="addAssignmentStudentLabelPersist" onclick="editAssignmentLabelPersist()"></button>
+                <button id="cancelAssignmentStudentLabelPersist" onclick="cancelEditAssignmentLabelPersist()"></button>
             </form>
     </div>   
 
@@ -70,12 +112,14 @@
             </form>
     </div>   
 
+    <div id="editTotalPossibleDivPersist" class="hide">
+            <form action="#">
+                <input type="text" id="editTotalPossibleInputFieldPersist" placeholder="class" style="background-color: blue; width: 500px" required="true" />
+                <button id="addTotalPossiblePersist" onclick="editTotalPossiblepersist()"></button>
+                <button id="cancelTotalPossiblePersist" onclick="cancelEditTotalPossiblePersist()"></button>
+            </form>
+    </div>   
 
-
-
-    
-
-    <button id="poop">poo poo</button>
 
 
     <div id="addScoreDiv" class="hide">
@@ -83,6 +127,14 @@
             <input type="text" id="scoreInputField" placeholder="score" style="background-color: blue; width: 500px" required="true" />
             <button id="addButtonTest" onclick="addScoreClick()" ></button>
             <button id="cancelEditScore" onclick="cancelAddStudentScore()" ></button>
+        </form>
+    </div>  
+
+    <div id="addScoreDivPersist" class="hide">
+        <form action="#">
+            <input type="text" id="scoreInputFieldPersist" placeholder="score" style="background-color: blue; width: 500px" required="true" />
+            <button id="addButtonTestPersist" onclick="addScoreClickPersist()" ></button>
+            <button id="cancelEditScorePersist" onclick="cancelAddStudentScorePersist()" ></button>
         </form>
     </div>  
 
@@ -104,14 +156,27 @@
  
 
     <div class="table_container" style="border: 1px solid white; border-radius: 24px; margin: auto" id="classContainer"></div>
+    <div class="table_container" style="border: 1px solid white; border-radius: 24px; margin: auto" id="classContainer-coursePersist"></div>
 
 
+     
+
+<!--  ATTENDANCE BUTTONS BELOW   -->
 
     <div id="officialAttendanceButtonDiv">
 
         <button id="addAttendanceButton">ADD ATTENDANCE</button>
 
     </div>
+
+    <div id="officialAttendanceButtonDiv" style="margin-left: 250px">
+
+        <button id="addAttendanceStudentButton">ADD STUDENTS ATTENDANCE</button>
+    
+        <button id="addAttendanceDatesButton">ADD DATES ATTENDANCE</button> 
+        
+    </div>
+
     
     
 

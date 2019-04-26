@@ -1,11 +1,16 @@
 
 const mongoose = require('mongoose');
 
-const Class = mongoose.model('classes', new mongoose.Schema({
+const Course = mongoose.model('courses', new mongoose.Schema({
     title: {
         type: String,
         minLength: 5,
         maxLength: 25,
         required: true
+    },
+    students: {
+        type: String,
+        minLength: 1,
+        maxLength: 25
     }
 }));
