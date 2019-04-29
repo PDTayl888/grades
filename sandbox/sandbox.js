@@ -1,38 +1,3 @@
-// const testOb = {
-//     string: 'hit it!',
-//     fart: ["gank", "hoity toity"],
-//     shit: new Map,
-//     heroin: 12,
-//     shitboi: 'inny outy'
-// };
-// let localData = 0;
-// testOb.shit.set('test', { hoop: 12 });
-// console.log(testOb);
-// const fartEe = JSON.stringify(...testOb.shit);
-// console.log(fartEe);
-// const goop = JSON.parse(fartEe);
-// console.log(goop);
-// localStorage.setItem('testOb', JSON.stringify(testOb));
-// const boob = new Map(goop);
-// console.log(boob);
-
-// localData = JSON.parse( localStorage.getItem('testOb'));
-
-// console.log(localData);
-// console.log(localStorage.getItem('testOb'));
-
-
-// console.log(testOb);
-// console.log(testOb.shit);
-// console.log(testOb.shit.get('test').hoop);
-
-// localStorage.setItem('noob', JSON.stringify(testOb));
-
-// const noobie = JSON.parse(localStorage.getItem('noob'));
-// console.log(noobie);
-// console.log(noobie.shit.get('test').hoop);
-
-
 
 
 
@@ -62,11 +27,11 @@
 
 const courseMarkArray = []; 
 
-const uniqueId = 'xxx-xxxx-xxx'.replace(/[x]/g, () => Math.random() * 9 | 0);
+var uniqueId = 'xxx-xxxx-xxx'.replace(/[x]/g, () => Math.random() * 9 | 0);
 
 console.log(uniqueId);
 
-const coursesArray = [];
+var coursesArray = [];
 
 //const assignmentsArray = [];
 
@@ -76,7 +41,7 @@ const coursesArray = [];
 class Course {
     constructor(title) {
         this.title = title;
-        this.id = uniqueId;
+        this.id = 'xxx-xxxx-xxx'.replace(/[x]/g, () => Math.random() * 9 | 0);
         this.scores = [];
         this.students = [];
         this.assignments = [];
@@ -111,12 +76,12 @@ class Course {
 
 class Assignment {
     constructor(title, newRow) {
-        this.id = uniqueId;
+        this.id = 'xxx-xxxx-xxx'.replace(/[x]/g, () => Math.random() * 9 | 0);
         this.title = title;
         this.students = [];
         this.scores = [];
         this.newRow = newRow;
-        this.totalPossible = 12;
+        this.totalPossible = '';
     }
 
     get row() {
@@ -130,7 +95,7 @@ class Assignment {
 
 class Student {
     constructor(name, row) {
-        this.id = uniqueId; 
+        this.id = 'xxx-xxxx-xxx'.replace(/[x]/g, () => Math.random() * 9 | 0);
         this.studentName = name;
         this.assignments = [];
         this.scores = [];
@@ -146,101 +111,6 @@ class Student {
     }
 
 }
-
-// class Course {
-//     constructor(title) {
-//         this.title = title;
-//         this.id = uniqueId;
-//         this.scores = [44,44,44,44,];
-//         this.students = [{name:"Gary"},{name:"Larry"},{name:"Barry"},{name:"Sandra"}];
-//         this.assignments = [{title:"essay", totalPossible: 42, scores: [12, 42, 53, 64]},{title:"asdf", totalPossible: 24, scores: [12, 42, 53, 64]},{title:"fart", totalPossible: 53, scores: [12, 42, 53, 64]}];
-//     }
-
-//     get courseName() {
-//         return this.title;
-//     }
-
-//     set courseName(newName) {
-//         this.title = newName;
-//     }
-
-
-//     get assArray() {
-//         return this.assignments;
-//     }
-
-//     set assArray(param) {
-//         this.assignments.push(param);
-//     }
-
-//     get studArray() {
-//         return this.students;
-//     }
-
-//     set studArray(param) {
-//         this.students.push(param);
-//     }
-// }
-
-
-
-// class Assignment {
-//     constructor(title, newRow) {
-//         this.id = uniqueId;
-//         this.title = title;
-//         this.students = [];
-//         this.scores = [12, 42, 555, 777];
-//         this.newRow = newRow;
-//         this.totalPossible = 12;
-//     }
-
-//     get row() {
-//         return this.newRow;
-//     }
-
-//     set row(row) {
-//         return this.newRow = row;
-//     }
-// }
-
-
-// class Student {
-//     constructor(name, row) {
-//         this.id = uniqueId; 
-//         this.studentname = name;
-//         this.assignments = [];
-//         this.scores = [];
-//         this.row = row;
-//     }
-
-//     get name() {
-//         return this.studentName;
-//     }
-
-//     set name(newName) {
-//         this.studentName = newName;
-//     }
-
-// }
-
-
-// const testStudent = new Assignment('essay');
-
-// testStudent.scores.push(12);
-
-// const testCourse = new Course('Gary');
-
-// testCourse.pushToAssignments(testStudent);
-
-// //console.log(testCourse.getOrSetName('poo'));
-// console.log(testCourse.getOrSetName);
-
-// console.log(testCourse.studentsFunc());
-
-// console.log(testCourse.getAss());
-
-// console.log(testCourse.getOrSetName)
-// console.log(testCourse.studentsFunc);
 
 // console.log(Course);
 
@@ -284,17 +154,17 @@ function init() {
     console.log("++++++++++++++++++!!|!+!|!!  PAGE LOADED  !!|!+!|!!+++++++++++++++++++++++++++++++++++++++++++!!|!+!|!!  PAGE LOADED  !!|!+!|!!+++++++++++++++++++++++++");
     //console.log("init function working");
 // CLASS ATTENDANCE TABLE LISTENERS
-    document.getElementById('addAttendanceButton').addEventListener('click', addAttendanceInputFormOpen);
-    document.getElementById('addButtonAttendance').addEventListener('click', addAttendanceToTable);
-    document.getElementById('cancelButtonAttendance').addEventListener('click', cancelAttendanceInputForm);
+    // document.getElementById('addAttendanceButton').addEventListener('click', addAttendanceInputFormOpen);
+    // document.getElementById('addButtonAttendance').addEventListener('click', addAttendanceToTable);
+    // document.getElementById('cancelButtonAttendance').addEventListener('click', cancelAttendanceInputForm);
  
-    document.getElementById('addAttendanceStudentButton').addEventListener('click', addAttendanceStudentInputFormOpen);
-    document.getElementById('addButtonAttendanceStudent').addEventListener('click', addStudentsToAttendanceTable);
-    document.getElementById('cancelAttendanceButtonStudent').addEventListener('click', cancelAttendanceStudentInputForm);
+    // document.getElementById('addAttendanceStudentButton').addEventListener('click', addAttendanceStudentInputFormOpen);
+    // document.getElementById('addButtonAttendanceStudent').addEventListener('click', addStudentsToAttendanceTable);
+    // document.getElementById('cancelAttendanceButtonStudent').addEventListener('click', cancelAttendanceStudentInputForm);
 
-    document.getElementById('addAttendanceDatesButton').addEventListener('click', addDatesAttendanceInputFormOpen);
-    document.getElementById('addButtonAttendanceDates').addEventListener('click', addDatesToAttendanceTable);
-    document.getElementById('cancelButtonAttendanceDates').addEventListener('click', cancelDatesAttendanceInputFormOpen);
+    // document.getElementById('addAttendanceDatesButton').addEventListener('click', addDatesAttendanceInputFormOpen);
+    // document.getElementById('addButtonAttendanceDates').addEventListener('click', addDatesToAttendanceTable);
+    // document.getElementById('cancelButtonAttendanceDates').addEventListener('click', cancelDatesAttendanceInputFormOpen);
 
     document.getElementById("addButtonStudent").style.cursor = "pointer";
     document.getElementById("addButtonClass").style.cursor = "pointer";
@@ -782,7 +652,7 @@ function testOneTwo() {
 
 
 
-
+var state = [];
 
 
 
@@ -992,338 +862,335 @@ return total;
 
 
 
-function addAttendanceToTable() {
-    console.log("addAttendanceToTable");
-    const attendanceText = document.querySelector('#addAttendanceInputField').value;
+// function addAttendanceToTable() {
+//     console.log("addAttendanceToTable");
+//     const attendanceText = document.querySelector('#addAttendanceInputField').value;
 
-    if(attendanceText == ""){
-        return;
-    }
-
-
-    attendanceDiv.style.display = "block";
-    console.log(attendanceDiv);
-    document.getElementById("addAttendanceDiv").style.display = "none";
-    document.querySelector('#attendanceContainer').className = "table_container";
-
-    //console.log('addClassButton eventListener is working!');
-
-    // CREATE TABLE ELEMENT
-        const attendanceTable = tableCreator.newElement("table");
-        tableCreator.setElementAttributeOf(attendanceTable)("id", "attendanceTable");
-        tableCreator.setElementAttributeOf(attendanceTable)("align", "center");
-        tableCreator.addChildTo(attendanceDiv)(attendanceTable);
-
-    // CREATE COLUMN
-        const colOne = tableCreator.newElement("col");
-        tableCreator.setElementAttributeOf(colOne)("style", "background-color: orange");
-        tableCreator.addChildTo(attendanceTable)(colOne);
-
-    // CREATE SECOND COLUMN
-        const colTwo = tableCreator.newElement("col");
-        tableCreator.setElementAttributeOf(colTwo)("style", "background-color: purple");
-        tableCreator.addChildTo(attendanceTable)(colTwo);
-        tableCreator.addChildTo(attendanceTable)(colTwo);
-
-    // CREATE THIRD COLUMN
-        const colThree = tableCreator.newElement("col");
-        tableCreator.setElementAttributeOf(colThree)("span", "100");
-        tableCreator.setElementAttributeOf(colThree)("style", "background-color: orange");
-        tableCreator.addChildTo(attendanceTable)(colThree);
-
-    // CREATE ATTENDANCE TABLE HEADER
-        const firstTableHeader = tableCreator.addTheadTo(attendanceTable)();
-        tableCreator.setElementAttributeOf(firstTableHeader)("id", "firstTableHeader");
-        const attendanceNameHeaderTag = tableCreator.newElement("th");
-        tableCreator.setElementAttributeOf(attendanceNameHeaderTag)("colspan", "100");
-        tableCreator.setElementAttributeOf(attendanceNameHeaderTag)("id", "classNameth");
-        tableCreator.setElementAttributeOf(attendanceNameHeaderTag)("style", "background-color: brown");
-
-    // ADD TEXT FROM NEW ATTENDANCE INPUT FIELD
-
-        tableCreator.addTextContentTo(attendanceNameHeaderTag)(`${attendanceText}`);
-        tableCreator.addChildTo(firstTableHeader)(attendanceNameHeaderTag);
+//     if(attendanceText == ""){
+//         return;
+//     }
 
 
-}
+//     attendanceDiv.style.display = "block";
+//     console.log(attendanceDiv);
+//     document.getElementById("addAttendanceDiv").style.display = "none";
+//     document.querySelector('#attendanceContainer').className = "table_container";
+
+//     //console.log('addClassButton eventListener is working!');
+
+//     // CREATE TABLE ELEMENT
+//         const attendanceTable = tableCreator.newElement("table");
+//         tableCreator.setElementAttributeOf(attendanceTable)("id", "attendanceTable");
+//         tableCreator.setElementAttributeOf(attendanceTable)("align", "center");
+//         tableCreator.addChildTo(attendanceDiv)(attendanceTable);
+
+//     // CREATE COLUMN
+//         const colOne = tableCreator.newElement("col");
+//         tableCreator.setElementAttributeOf(colOne)("style", "background-color: orange");
+//         tableCreator.addChildTo(attendanceTable)(colOne);
+
+//     // CREATE SECOND COLUMN
+//         const colTwo = tableCreator.newElement("col");
+//         tableCreator.setElementAttributeOf(colTwo)("style", "background-color: purple");
+//         tableCreator.addChildTo(attendanceTable)(colTwo);
+//         tableCreator.addChildTo(attendanceTable)(colTwo);
+
+//     // CREATE THIRD COLUMN
+//         const colThree = tableCreator.newElement("col");
+//         tableCreator.setElementAttributeOf(colThree)("span", "100");
+//         tableCreator.setElementAttributeOf(colThree)("style", "background-color: orange");
+//         tableCreator.addChildTo(attendanceTable)(colThree);
+
+//     // CREATE ATTENDANCE TABLE HEADER
+//         const firstTableHeader = tableCreator.addTheadTo(attendanceTable)();
+//         tableCreator.setElementAttributeOf(firstTableHeader)("id", "firstTableHeader");
+//         const attendanceNameHeaderTag = tableCreator.newElement("th");
+//         tableCreator.setElementAttributeOf(attendanceNameHeaderTag)("colspan", "100");
+//         tableCreator.setElementAttributeOf(attendanceNameHeaderTag)("id", "classNameth");
+//         tableCreator.setElementAttributeOf(attendanceNameHeaderTag)("style", "background-color: brown");
+
+//     // ADD TEXT FROM NEW ATTENDANCE INPUT FIELD
+
+//         tableCreator.addTextContentTo(attendanceNameHeaderTag)(`${attendanceText}`);
+//         tableCreator.addChildTo(firstTableHeader)(attendanceNameHeaderTag);
 
 
+// }
 
 
 
 
 
-function addStudentsToAttendanceTable() {
-
-    document.querySelector('#attendanceContainer').style.display = "block";
-    document.querySelector('#addStudentAttendanceDiv').style.display = "none";
-    document.querySelector('#attendanceContainer').className = "table_container";
 
 
+// function addStudentsToAttendanceTable() {
 
-    console.log("addStudentToAttendanceTable");
-    const attendanceText = document.querySelector('#addStudentInputField').value;
-
-    if(attendanceText == ""){
-        return;
-    }
+//     document.querySelector('#attendanceContainer').style.display = "block";
+//     document.querySelector('#addStudentAttendanceDiv').style.display = "none";
+//     document.querySelector('#attendanceContainer').className = "table_container";
 
 
 
-    if(attendanceArray.length < 1 && studentsArray.length < 1) {
-        console.log("first condition test");
-    // CREATE STUDENT NAME ROW
-        const studentNameRow = tableCreator.newElement("tr");
-        tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
-        tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
-        tableCreator.addChildTo(attendanceTable)(studentNameRow);
+//     console.log("addStudentToAttendanceTable");
+//     const attendanceText = document.querySelector('#addStudentInputField').value;
 
-    // CREATE HEADER TAG
-        const headerTag = tableCreator.newElement("th");
-        tableCreator.addChildTo(studentNameRow)(headerTag);
-        tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
-        tableCreator.addTextContentTo(headerTag)("");
-
-    // CREATE th ELEMENT
-        const totalTh = tableCreator.newElement("th");
-        tableCreator.addChildTo(studentNameRow)(totalTh);
-        const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
-    }
+//     if(attendanceText == ""){
+//         return;
+//     }
 
 
-    ////////////////////////////////////////////////////////
-    // STUDENT HEADERS ROW
+//     if(attendanceArray.length < 1 && studentsArray.length < 1) {
+//         console.log("first condition test");
+//     // CREATE STUDENT NAME ROW
+//         const studentNameRow = tableCreator.newElement("tr");
+//         tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
+//         tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
+//         tableCreator.addChildTo(attendanceTable)(studentNameRow);
 
-    if(attendanceArray.length < 1 ) {
-        console.log("second condition test");
-    // ADD th ELEMENT TO STUDENT ROW
-        studentLabelArray.pop();
-        const studentId = studentsArray.length + 1;
-        const secondTh = tableCreator.newElement("th");
+//     // CREATE HEADER TAG
+//         const headerTag = tableCreator.newElement("th");
+//         tableCreator.addChildTo(studentNameRow)(headerTag);
+//         tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+//         tableCreator.addTextContentTo(headerTag)("");
+
+//     // CREATE th ELEMENT
+//         const totalTh = tableCreator.newElement("th");
+//         tableCreator.addChildTo(studentNameRow)(totalTh);
+//         const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
+//     }
+
+
+//     ////////////////////////////////////////////////////////
+//     // STUDENT HEADERS ROW
+
+//     if(attendanceArray.length < 1 ) {
+//         console.log("second condition test");
+//     // ADD th ELEMENT TO STUDENT ROW
+//         studentLabelArray.pop();
+//         const studentId = studentsArray.length + 1;
+//         const secondTh = tableCreator.newElement("th");
         
-        tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader`);
-        tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+//         tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader`);
+//         tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
 
-        const assignArrayLength = attendanceArray.length;
-    // SET CLASS OF NEW th ELEMENT
-        tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+//         const assignArrayLength = attendanceArray.length;
+//     // SET CLASS OF NEW th ELEMENT
+//         tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
 
-    // CREATE NEW SPAN
-        const studentSpan = tableCreator.newElement("span");
-        console.log(studentSpan);
-        tableCreator.addChildTo(secondTh)(studentSpan);
-        //tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameSpan`);
-        tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan`);
+//     // CREATE NEW SPAN
+//         const studentSpan = tableCreator.newElement("span");
+//         console.log(studentSpan);
+//         tableCreator.addChildTo(secondTh)(studentSpan);
+//         //tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameSpan`);
+//         tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan`);
 
-    // SET TEXT OF NEW th ELEMENT
-        const assignmentText = document.querySelector('#addStudentInputField').value;
-        tableCreator.addTextContentTo(studentSpan)(`${assignmentText}`);
-        console.log(secondTh);
+//     // SET TEXT OF NEW th ELEMENT
+//         const assignmentText = document.querySelector('#addStudentInputField').value;
+//         tableCreator.addTextContentTo(studentSpan)(`${assignmentText}`);
+//         console.log(secondTh);
 
-    // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
-        const editStudentNameButton = tableCreator.newElement("button");
-        tableCreator.setElementAttributeOf(editStudentNameButton)("id", `student-${studentId}-editStudentNameButton`); 
-        tableCreator.setElementAttributeOf(editStudentNameButton)("data-studentLabelId", `${studentId}`); 
+//     // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
+//         const editStudentNameButton = tableCreator.newElement("button");
+//         tableCreator.setElementAttributeOf(editStudentNameButton)("id", `student-${studentId}-editStudentNameButton`); 
+//         tableCreator.setElementAttributeOf(editStudentNameButton)("data-studentLabelId", `${studentId}`); 
 
-        const plusIcon = tableCreator.newElement("i");
-                tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
+//         const plusIcon = tableCreator.newElement("i");
+//                 tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
 
-                tableCreator.addChildTo(editStudentNameButton)(plusIcon);
+//                 tableCreator.addChildTo(editStudentNameButton)(plusIcon);
 
 
 
-        tableCreator.addChildTo(secondTh)(editStudentNameButton);
+//         tableCreator.addChildTo(secondTh)(editStudentNameButton);
 
-        document.querySelector(`#student-${studentId}-editStudentNameButton`).addEventListener("click", openEditStudentLabelDiv);
+//         document.querySelector(`#student-${studentId}-editStudentNameButton`).addEventListener("click", openEditStudentLabelDiv);
     
     
-        function openEditStudentLabelDiv() {
-            changeClassName("#classContainer")("blur");
+//         function openEditStudentLabelDiv() {
+//             changeClassName("#classContainer")("blur");
 
-            console.log(editStudentNameButton.dataset.studentlabelid);
-            studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
-            console.log(studentLabelArray);
+//             console.log(editStudentNameButton.dataset.studentlabelid);
+//             studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
+//             console.log(studentLabelArray);
 
-            console.log("openEditStudentLabelDiv is invoked 1 1 1 1 1 1 1 ")
-            const editStudentLabelDiv = document.querySelector('#addStudentLabelDiv');
-            tableCreator.setElementAttributeOf(editStudentLabelDiv)("class", "addStudentDiv");
-        }
-
-
-        document.querySelector(`#student-${studentId}-editStudentNameButton`).style.cursor = "pointer";
-
-        console.log(" ttttttttttttttttttttttttttttttttttt");
-        console.log(editStudentNameButton);
-    // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
-        const first = document.getElementsByClassName(`${studentId}`);
-        studentsArray.push(first);
-
-    }
-
-    if(attendanceArray.length >= 1) {
-    console.log("third condition test");
-    studentLabelArray.pop();
-
-    // ADD th ELEMENT TO STUDENT ROW
-    const studentId = studentsArray.length + 1;
-    const secondTh = tableCreator.newElement("th");
-    tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader`);
-
-    tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
-
-    const assignArrayLength = attendanceArray.length;
-    // SET CLASS OF NEW th ELEMENT
-    tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
-    // CREATE NEW SPAN
-    const studentSpan = tableCreator.newElement("span");
-    console.log(studentSpan);
-    tableCreator.addChildTo(secondTh)(studentSpan);
-    //tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameSpan`);
-    tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan`);
-
-    // SET TEXT OF NEW SPAN ELEMENT
-    const assignmentText = document.querySelector('#addStudentInputField').value;
-    tableCreator.addTextContentTo(studentSpan)(`${assignmentText}`);
-    console.log(secondTh);
-
-    // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
-    const editStudentNameButton = tableCreator.newElement("button");
-    tableCreator.setElementAttributeOf(editStudentNameButton)("id", `student-${studentId}-editStudentNameButton`); 
-    tableCreator.setElementAttributeOf(editStudentNameButton)("data-studentLabelId", `${studentId}`); 
-
-    const plusIcon = tableCreator.newElement("i");
-    tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
-
-    tableCreator.addChildTo(editStudentNameButton)(plusIcon);
+//             console.log("openEditStudentLabelDiv is invoked 1 1 1 1 1 1 1 ")
+//             const editStudentLabelDiv = document.querySelector('#addStudentLabelDiv');
+//             tableCreator.setElementAttributeOf(editStudentLabelDiv)("class", "addStudentDiv");
+//         }
 
 
-    tableCreator.addChildTo(secondTh)(editStudentNameButton);
-    console.log(editStudentNameButton);
+//         document.querySelector(`#student-${studentId}-editStudentNameButton`).style.cursor = "pointer";
 
-    document.querySelector(`#student-${studentId}-editStudentNameButton`).style.cursor = "pointer";
+//         console.log(" ttttttttttttttttttttttttttttttttttt");
+//         console.log(editStudentNameButton);
+//     // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
+//         const first = document.getElementsByClassName(`${studentId}`);
+//         studentsArray.push(first);
 
-    document.querySelector(`#student-${studentId}-editStudentNameButton`).addEventListener("click", openEditStudentLabelDiv);
+//     }
+
+//     if(attendanceArray.length >= 1) {
+//     console.log("third condition test");
+//     studentLabelArray.pop();
+
+//     // ADD th ELEMENT TO STUDENT ROW
+//     const studentId = studentsArray.length + 1;
+//     const secondTh = tableCreator.newElement("th");
+//     tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader`);
+
+//     tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+
+//     const assignArrayLength = attendanceArray.length;
+//     // SET CLASS OF NEW th ELEMENT
+//     tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+//     // CREATE NEW SPAN
+//     const studentSpan = tableCreator.newElement("span");
+//     console.log(studentSpan);
+//     tableCreator.addChildTo(secondTh)(studentSpan);
+//     //tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameSpan`);
+//     tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan`);
+
+//     // SET TEXT OF NEW SPAN ELEMENT
+//     const assignmentText = document.querySelector('#addStudentInputField').value;
+//     tableCreator.addTextContentTo(studentSpan)(`${assignmentText}`);
+//     console.log(secondTh);
+
+//     // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
+//     const editStudentNameButton = tableCreator.newElement("button");
+//     tableCreator.setElementAttributeOf(editStudentNameButton)("id", `student-${studentId}-editStudentNameButton`); 
+//     tableCreator.setElementAttributeOf(editStudentNameButton)("data-studentLabelId", `${studentId}`); 
+
+//     const plusIcon = tableCreator.newElement("i");
+//     tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
+
+//     tableCreator.addChildTo(editStudentNameButton)(plusIcon);
+
+
+//     tableCreator.addChildTo(secondTh)(editStudentNameButton);
+//     console.log(editStudentNameButton);
+
+//     document.querySelector(`#student-${studentId}-editStudentNameButton`).style.cursor = "pointer";
+
+//     document.querySelector(`#student-${studentId}-editStudentNameButton`).addEventListener("click", openEditStudentLabelDiv);
     
 
-    function openEditStudentLabelDiv() {
+//     function openEditStudentLabelDiv() {
 
-        changeClassName("#classContainer")("blur");
+//         changeClassName("#classContainer")("blur");
 
-        console.log(editStudentNameButton.dataset.studentlabelid);
-        studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
-        console.log(studentLabelArray);
-
-
-       console.log("openEditStudentLabelDiv is invoked 2 2 2 2 2 2 2 ")
-
-        const editStudentLabelDiv = document.querySelector('#addStudentLabelDiv');
-        tableCreator.setElementAttributeOf(editStudentLabelDiv)("class", "addStudentDiv");
-    }
+//         console.log(editStudentNameButton.dataset.studentlabelid);
+//         studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
+//         console.log(studentLabelArray);
 
 
-    // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
-    const first = document.getElementsByClassName(`${studentId}`);
-    studentsArray.push(first);
-    // ADD CELL TO EACH ASSIGNMENT FOR NEW STUDENT
-    attendanceArray.forEach((assignment, index) => {
-        var indexOne = index + 1;
-    // CREATE AND ADD PLACEHOLDER CELL
-        const newCell = tableCreator.addCellTo(assignment)(-1);
-        console.log(newCell);
-    // SET CLASS OF NEW PLACEHOLDER CELL
-    console.log(studentId + " --- " + indexOne);
-        tableCreator.setElementAttributeOf(newCell)("class", "score");
-        tableCreator.setElementAttributeOf(newCell)("id", `student-${studentId}-assignment-${indexOne}-scoreCell`);
+//        console.log("openEditStudentLabelDiv is invoked 2 2 2 2 2 2 2 ")
+
+//         const editStudentLabelDiv = document.querySelector('#addStudentLabelDiv');
+//         tableCreator.setElementAttributeOf(editStudentLabelDiv)("class", "addStudentDiv");
+//     }
 
 
-        //const score = document.querySelector('#scoreInputField').value;
-    // CREATE AND ADD SPAN TO SCORE CELL
-        const span = tableCreator.newElement("span");
-        tableCreator.setElementAttributeOf(span)("id", `student-${studentId}-assignment-${indexOne}-scoreSpan`);
-        tableCreator.addChildTo(newCell)(span);
-        tableCreator.addTextContentTo(span)("");
+//     // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
+//     const first = document.getElementsByClassName(`${studentId}`);
+//     studentsArray.push(first);
+//     // ADD CELL TO EACH ASSIGNMENT FOR NEW STUDENT
+//     attendanceArray.forEach((assignment, index) => {
+//         var indexOne = index + 1;
+//     // CREATE AND ADD PLACEHOLDER CELL
+//         const newCell = tableCreator.addCellTo(assignment)(-1);
+//         console.log(newCell);
+//     // SET CLASS OF NEW PLACEHOLDER CELL
+//     console.log(studentId + " --- " + indexOne);
+//         tableCreator.setElementAttributeOf(newCell)("class", "score");
+//         tableCreator.setElementAttributeOf(newCell)("id", `student-${studentId}-assignment-${indexOne}-scoreCell`);
 
 
-    // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
-        const addScoreButton = tableCreator.newElement("button");
-        tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studentId}-assignment-${indexOne}-scoreButton`);
-        tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studentId}`);
-        tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${indexOne}`);
-        tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
-        tableCreator.setElementAttributeOf(addScoreButton)("style", "cursor: pointer");
-
-        const plusIcon = tableCreator.newElement("i");
-    //<i class="material-icons">face</i>
-        tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
-
-        tableCreator.addChildTo(addScoreButton)(plusIcon);
-
-        console.log(addScoreButton);
-
-    tableCreator.addChildTo(newCell)(addScoreButton);
+//         //const score = document.querySelector('#scoreInputField').value;
+//     // CREATE AND ADD SPAN TO SCORE CELL
+//         const span = tableCreator.newElement("span");
+//         tableCreator.setElementAttributeOf(span)("id", `student-${studentId}-assignment-${indexOne}-scoreSpan`);
+//         tableCreator.addChildTo(newCell)(span);
+//         tableCreator.addTextContentTo(span)("");
 
 
-    console.log(document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`));
+//     // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
+//         const addScoreButton = tableCreator.newElement("button");
+//         tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studentId}-assignment-${indexOne}-scoreButton`);
+//         tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studentId}`);
+//         tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${indexOne}`);
+//         tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
+//         tableCreator.setElementAttributeOf(addScoreButton)("style", "cursor: pointer");
 
-        const x = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`).dataset.student;
-        const y = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`).dataset.assignment;
-        console.log(x);
+//         const plusIcon = tableCreator.newElement("i");
+//     //<i class="material-icons">face</i>
+//         tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
 
-        addScoreButton.addEventListener('click', function() {
+//         tableCreator.addChildTo(addScoreButton)(plusIcon);
 
-            document.querySelector('#addScoreDiv').style.display = "block";
+//         console.log(addScoreButton);
 
-            state.pop();
-            state.pop();
-
-            console.log(addScoreButton.dataset.student);
-            state.push(addScoreButton.dataset.student);
-            console.log(addScoreButton.dataset.assignment);
-            state.push(addScoreButton.dataset.assignment);
-
-            console.log(state);
-
-            console.log("+++++++++++**********************&&&&&&&&&&%%%%%");
-
-            document.querySelector('#addScoreDiv').className = "addStudentDiv";
+//     tableCreator.addChildTo(newCell)(addScoreButton);
 
 
-        });
+//     console.log(document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`));
+
+//         const x = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`).dataset.student;
+//         const y = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`).dataset.assignment;
+//         console.log(x);
+
+//         addScoreButton.addEventListener('click', function() {
+
+//             document.querySelector('#addScoreDiv').style.display = "block";
+
+//             state.pop();
+//             state.pop();
+
+//             console.log(addScoreButton.dataset.student);
+//             state.push(addScoreButton.dataset.student);
+//             console.log(addScoreButton.dataset.assignment);
+//             state.push(addScoreButton.dataset.assignment);
+
+//             console.log(state);
+
+//             console.log("+++++++++++**********************&&&&&&&&&&%%%%%");
+
+//             document.querySelector('#addScoreDiv').className = "addStudentDiv";
 
 
-    //addScoreClick();
-    //document.querySelector('#cancelScoreButton').addEventListener('click', cancelScore);
-
-    })
+//         });
 
 
+//     //addScoreClick();
+//     //document.querySelector('#cancelScoreButton').addEventListener('click', cancelScore);
+
+//     })
 
 
-    const Id = studentsArray.length;
-    // CREATE th HEADER FOR STUDENT TOTAL
-        const studentTotalHeader = tableCreator.newElement("th");
-    // SET CLASS OF NEW th ELEMENT
-        tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${Id}`);
-    // SET TEXT OF NEW th ELEMENT
-    //console.log(studentTotalBottom(1));
-    //const assignmentText = document.querySelector('#addStudentInputField').value;
-    //var finalTotal = studentTotalBottom((studentsArray.length));
-    //console.log(finalTotal);
-
-    //tableCreator.addTextContentTo(studentTotalHeader)(`${newTotal}`);
-
-    tableCreator.addTextContentTo(studentTotalHeader)("student poop test");
 
 
-        //tableCreator.addTextContentTo(studentTotalHeader)("1299");
+//     const Id = studentsArray.length;
+//     // CREATE th HEADER FOR STUDENT TOTAL
+//         const studentTotalHeader = tableCreator.newElement("th");
+//     // SET CLASS OF NEW th ELEMENT
+//         tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${Id}`);
+//     // SET TEXT OF NEW th ELEMENT
+//     //console.log(studentTotalBottom(1));
+//     //const assignmentText = document.querySelector('#addStudentInputField').value;
+//     //var finalTotal = studentTotalBottom((studentsArray.length));
+//     //console.log(finalTotal);
 
-    // ADD th ELEMENT TO TOTALS ROW
-        tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
+//     //tableCreator.addTextContentTo(studentTotalHeader)(`${newTotal}`);
 
-    }
-}
+//     tableCreator.addTextContentTo(studentTotalHeader)("student poop test");
 
 
+//         //tableCreator.addTextContentTo(studentTotalHeader)("1299");
+
+//     // ADD th ELEMENT TO TOTALS ROW
+//         tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
+
+//     }
+// }
 
 
 
@@ -1334,328 +1201,335 @@ function addStudentsToAttendanceTable() {
 
 
 
-function addDatesToAttendanceTable() {
-
-    document.querySelector('#attendanceContainer').style.display = "block";
-    document.querySelector('#addDatesAttendanceDiv').style.display = "none";
-    document.querySelector('#attendanceContainer').className = "table_container";
-
-    console.log("addDatesToAttendanceToTable");
-    const classText = document.querySelector('#addAttendanceDatesInputField').value;
-
-    if(classText == ""){
-        return;
-    }
 
 
+// function addDatesToAttendanceTable() {
 
-    if(assignmentsArray.length < 1 && studentsArray.length < 1) {
+//     document.querySelector('#attendanceContainer').style.display = "block";
+//     document.querySelector('#addDatesAttendanceDiv').style.display = "none";
+//     document.querySelector('#attendanceContainer').className = "table_container";
 
-        // CREATE STUDENT NAME ROW
-            const studentNameRow = tableCreator.newElement("tr");
-            tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
-            tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
-            tableCreator.addChildTo(classTable)(studentNameRow);
+//     console.log("addDatesToAttendanceToTable");
+//     const classText = document.querySelector('#addAttendanceDatesInputField').value;
 
-        // CREATE HEADER TAG
-            const headerTag = tableCreator.newElement("th");
-            tableCreator.addChildTo(studentNameRow)(headerTag);
-            tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
-            tableCreator.addTextContentTo(headerTag)("");
+//     if(classText == ""){
+//         return;
+//     }
 
-        // CREATE th ELEMENT
-            const totalTh = tableCreator.newElement("th");
-            tableCreator.addChildTo(studentNameRow)(totalTh);
-            const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
-    }
+
+
+//     if(assignmentsArray.length < 1 && studentsArray.length < 1) {
+
+//         // CREATE STUDENT NAME ROW
+//             const studentNameRow = tableCreator.newElement("tr");
+//             tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow");
+//             tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
+//             tableCreator.addChildTo(classTable)(studentNameRow);
+
+//         // CREATE HEADER TAG
+//             const headerTag = tableCreator.newElement("th");
+//             tableCreator.addChildTo(studentNameRow)(headerTag);
+//             tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+//             tableCreator.addTextContentTo(headerTag)("");
+
+//         // CREATE th ELEMENT
+//             const totalTh = tableCreator.newElement("th");
+//             tableCreator.addChildTo(studentNameRow)(totalTh);
+//             const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
+//     }
 
     
-    console.log(assignmentsArray[3]);
-    console.log(assignmentsArray);
-    console.log(assignmentsArray[3]);
-    console.log(assignmentsArray.length);
-    console.log(assignmentsArray.length + 1);
+//     console.log(assignmentsArray[3]);
+//     console.log(assignmentsArray);
+//     console.log(assignmentsArray[3]);
+//     console.log(assignmentsArray.length);
+//     console.log(assignmentsArray.length + 1);
     
-    let assignmentId = assignmentsArray.length + 1;
-    // INSERT ASSIGNMENT ROW 
-        console.log("add assignment row test @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        const assignmentRow = classTable.insertRow(assignmentId);
-    // SET ATTRIBUTES FOR NEW ASSIGNMENT tr
-            tableCreator.setElementAttributeOf(assignmentRow)("id", `${assignmentId}`);
-            tableCreator.setElementAttributeOf(assignmentRow)("data-id", `${assignmentId}`);
-            console.log(assignmentRow);
+//     let assignmentId = assignmentsArray.length + 1;
+//     // INSERT ASSIGNMENT ROW 
+//         console.log("add assignment row test @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+//         const assignmentRow = classTable.insertRow(assignmentId);
+//     // SET ATTRIBUTES FOR NEW ASSIGNMENT tr
+//             tableCreator.setElementAttributeOf(assignmentRow)("id", `${assignmentId}`);
+//             tableCreator.setElementAttributeOf(assignmentRow)("data-id", `${assignmentId}`);
+//             console.log(assignmentRow);
     
 
-    // CREATE th FOR NEW ASSIGNMENT
-        const assignmentName = tableCreator.newElement("th");
-        tableCreator.addChildTo(assignmentRow)(assignmentName);
-        tableCreator.setElementAttributeOf(assignmentName)("class", "headerCorrect");
+//     // CREATE th FOR NEW ASSIGNMENT
+//         const assignmentName = tableCreator.newElement("th");
+//         tableCreator.addChildTo(assignmentRow)(assignmentName);
+//         tableCreator.setElementAttributeOf(assignmentName)("class", "headerCorrect");
 
-        // CREATE NEW SPAN
-            const assignmentSpan = tableCreator.newElement("span");
-            console.log(assignmentSpan);
-            tableCreator.addChildTo(assignmentName)(assignmentSpan);
-            tableCreator.setElementAttributeOf(assignmentSpan)("id", `student-${assignmentId}-assignmentNameSpan`);
+//         // CREATE NEW SPAN
+//             const assignmentSpan = tableCreator.newElement("span");
+//             console.log(assignmentSpan);
+//             tableCreator.addChildTo(assignmentName)(assignmentSpan);
+//             tableCreator.setElementAttributeOf(assignmentSpan)("id", `student-${assignmentId}-assignmentNameSpan`);
     
-    // ADD TEXT TO ASSIGNMENT SPAN
-        const assignmentText = document.querySelector('#addAssignmentInputField').value;
+//     // ADD TEXT TO ASSIGNMENT SPAN
+//         const assignmentText = document.querySelector('#addAssignmentInputField').value;
 
-        tableCreator.addTextContentTo(assignmentSpan)(`${assignmentText}`);
-        tableCreator.setElementAttributeOf(assignmentSpan)("id", `assignment-${assignmentId}-assignmentSpan`);
+//         tableCreator.addTextContentTo(assignmentSpan)(`${assignmentText}`);
+//         tableCreator.setElementAttributeOf(assignmentSpan)("id", `assignment-${assignmentId}-assignmentSpan`);
 
-        tableCreator.setElementAttributeOf(assignmentName)("data-assignmentName", `${assignmentText}`);
+//         tableCreator.setElementAttributeOf(assignmentName)("data-assignmentName", `${assignmentText}`);
 
     
     
-    // CREATE EDIT BUTTON FOR NEW ASSIGNMENT
-    const editAssignmentNameButton = tableCreator.newElement("button");
-        tableCreator.setElementAttributeOf(editAssignmentNameButton)("id", `assignment-${assignmentId}-editAssignmentNameButton`); 
-        tableCreator.setElementAttributeOf(editAssignmentNameButton)("data-assignmentId", `${assignmentId}`); 
+//     // CREATE EDIT BUTTON FOR NEW ASSIGNMENT
+//     const editAssignmentNameButton = tableCreator.newElement("button");
+//         tableCreator.setElementAttributeOf(editAssignmentNameButton)("id", `assignment-${assignmentId}-editAssignmentNameButton`); 
+//         tableCreator.setElementAttributeOf(editAssignmentNameButton)("data-assignmentId", `${assignmentId}`); 
 
-        tableCreator.addTextContentTo(editAssignmentNameButton)("+");
-        console.log(":::::::::::::::::::::::::::::::::::::::::::::");
-        console.log(assignmentName);
-        tableCreator.addChildTo(assignmentName)(editAssignmentNameButton);
+//         tableCreator.addTextContentTo(editAssignmentNameButton)("+");
+//         console.log(":::::::::::::::::::::::::::::::::::::::::::::");
+//         console.log(assignmentName);
+//         tableCreator.addChildTo(assignmentName)(editAssignmentNameButton);
 
-        document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton`).addEventListener("click", openEditAssignmentLabelDiv);
+//         document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton`).addEventListener("click", openEditAssignmentLabelDiv);
             
             
-        function openEditAssignmentLabelDiv() {
+//         function openEditAssignmentLabelDiv() {
 
-            changeClassName("#classContainer")("blur");
+//             changeClassName("#classContainer")("blur");
 
-            console.log(editAssignmentNameButton.dataset.assignmentid);
-            assignmentLabelArray.push(editAssignmentNameButton.dataset.assignmentid);
-            console.log(assignmentLabelArray);
-
-
-            console.log("openEditAssignmentLabelDiv is invoked ! ! ! ! ! ")
-            const editAssignmentLabelDiv = document.querySelector('#addAssignmentLabelDiv');
-            tableCreator.setElementAttributeOf(editAssignmentLabelDiv)("class", "addStudentDiv");
-        }
+//             console.log(editAssignmentNameButton.dataset.assignmentid);
+//             assignmentLabelArray.push(editAssignmentNameButton.dataset.assignmentid);
+//             console.log(assignmentLabelArray);
 
 
+//             console.log("openEditAssignmentLabelDiv is invoked ! ! ! ! ! ")
+//             const editAssignmentLabelDiv = document.querySelector('#addAssignmentLabelDiv');
+//             tableCreator.setElementAttributeOf(editAssignmentLabelDiv)("class", "addStudentDiv");
+//         }
 
-        document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton`).style.cursor = "pointer";
 
 
-        console.log(editAssignmentNameButton);
+//         document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton`).style.cursor = "pointer";
+
+
+//         console.log(editAssignmentNameButton);
 
 
 
 
  
-    // PUSH NEW ASSIGNMENT tr ELEMENT TO ASSIGNMENTS ARRAY
-        assignmentsArray.push(assignmentRow);
-        console.log(assignmentsArray);
-        console.log(assignmentsArray.length);
+//     // PUSH NEW ASSIGNMENT tr ELEMENT TO ASSIGNMENTS ARRAY
+//         assignmentsArray.push(assignmentRow);
+//         console.log(assignmentsArray);
+//         console.log(assignmentsArray.length);
 
-        var correctCell = assignmentsArray.length - 1;
-        var lengthStudents = studentsArray.length;
-        console.log(studentsArray);
+//         var correctCell = assignmentsArray.length - 1;
+//         var lengthStudents = studentsArray.length;
+//         console.log(studentsArray);
 
-    // ADD PLACEHOLDER CELL FOR TOTAL POSSIBLE POINTS TO NEW ASSIGNMENT ROW
-        const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);
-        const studentId = studentsArray.length;
-        const assignmentArrayLength = assignmentsArray.length;
+//     // ADD PLACEHOLDER CELL FOR TOTAL POSSIBLE POINTS TO NEW ASSIGNMENT ROW
+//         const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);
+//         const studentId = studentsArray.length;
+//         const assignmentArrayLength = assignmentsArray.length;
 
-    // CREATE NEW SPAN
-        console.log(assignmentArrayLength);
-        const totalPossibleSpan = tableCreator.newElement("span");
-        console.log(totalPossibleSpan);
-        tableCreator.addChildTo(newCell)(totalPossibleSpan);
-        tableCreator.setElementAttributeOf(totalPossibleSpan)("id", `assignment-${assignmentArrayLength}-totalPossibleSpan`);
-        tableCreator.setElementAttributeOf(document.querySelector(`#assignment-${assignmentArrayLength}-totalPossibleSpan`))("data-totalpossible", `${assignmentArrayLength}`);
+//     // CREATE NEW SPAN
+//         console.log(assignmentArrayLength);
+//         const totalPossibleSpan = tableCreator.newElement("span");
+//         console.log(totalPossibleSpan);
+//         tableCreator.addChildTo(newCell)(totalPossibleSpan);
+//         tableCreator.setElementAttributeOf(totalPossibleSpan)("id", `assignment-${assignmentArrayLength}-totalPossibleSpan`);
+//         tableCreator.setElementAttributeOf(document.querySelector(`#assignment-${assignmentArrayLength}-totalPossibleSpan`))("data-totalpossible", `${assignmentArrayLength}`);
  
  
-    // ADD EDIT BUTTON TO TOTAL POSSIBLE 
-        const editTotalPossibleButton = tableCreator.newElement("button");
-        tableCreator.setElementAttributeOf(editTotalPossibleButton)("id", `assignment-${assignmentArrayLength}-editTotalPossibleButton`); 
-        tableCreator.addTextContentTo(editTotalPossibleButton)("+");
-        console.log(":::::::::::::::::::::::::::::::::::::::::::::");
-        console.log(assignmentName);
-        tableCreator.addChildTo(newCell)(editTotalPossibleButton);
+//     // ADD EDIT BUTTON TO TOTAL POSSIBLE 
+//         const editTotalPossibleButton = tableCreator.newElement("button");
+//         tableCreator.setElementAttributeOf(editTotalPossibleButton)("id", `assignment-${assignmentArrayLength}-editTotalPossibleButton`); 
+//         tableCreator.addTextContentTo(editTotalPossibleButton)("+");
+//         console.log(":::::::::::::::::::::::::::::::::::::::::::::");
+//         console.log(assignmentName);
+//         tableCreator.addChildTo(newCell)(editTotalPossibleButton);
 
-        document.querySelector(`#assignment-${assignmentArrayLength}-editTotalPossibleButton`).style.cursor = "pointer";
+//         document.querySelector(`#assignment-${assignmentArrayLength}-editTotalPossibleButton`).style.cursor = "pointer";
 
 
-        console.log(editTotalPossibleButton);
+//         console.log(editTotalPossibleButton);
 
-        document.querySelector(`#assignment-${assignmentArrayLength}-editTotalPossibleButton`).addEventListener("click", openEditTotalPossibleDiv);
+//         document.querySelector(`#assignment-${assignmentArrayLength}-editTotalPossibleButton`).addEventListener("click", openEditTotalPossibleDiv);
             
             
-    function openEditTotalPossibleDiv() {
-        console.log("openEditTotalPossibleDiv *******************");
-        console.log(assignmentArrayLength);
+//     function openEditTotalPossibleDiv() {
+//         console.log("openEditTotalPossibleDiv *******************");
+//         console.log(assignmentArrayLength);
 
 
-        changeClassName("#classContainer")("blur");
+//         changeClassName("#classContainer")("blur");
 
-        const totalSpan = document.querySelector(`#assignment-${assignmentArrayLength}-totalPossibleSpan`);
+//         const totalSpan = document.querySelector(`#assignment-${assignmentArrayLength}-totalPossibleSpan`);
 
-        console.log(totalSpan);
-        console.log(totalSpan.dataset.totalpossible);
-        totalPossibleArray.push(totalSpan.dataset.totalpossible);
-        console.log(totalPossibleArray);
-
-
-        console.log("openEditTotalPossibleDiv is invoked ! ! ! ! ! ")
-        const editTotalPossibleDiv = document.querySelector('#editTotalPossibleDiv');
-        tableCreator.setElementAttributeOf(editTotalPossibleDiv)("class", "addStudentDiv");
-    }
+//         console.log(totalSpan);
+//         console.log(totalSpan.dataset.totalpossible);
+//         totalPossibleArray.push(totalSpan.dataset.totalpossible);
+//         console.log(totalPossibleArray);
 
 
-
-        document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton`).style.cursor = "pointer";
+//         console.log("openEditTotalPossibleDiv is invoked ! ! ! ! ! ")
+//         const editTotalPossibleDiv = document.querySelector('#editTotalPossibleDiv');
+//         tableCreator.setElementAttributeOf(editTotalPossibleDiv)("class", "addStudentDiv");
+//     }
 
 
 
-
-
-    //tableCreator.setElementAttributeOf(shit)("style", "background-color: purple; border: purple");
-        // ADD PLACEHOLDER CELLS FOR ASSIGNMENT SCORES FOR EACH STUDENT
-            for(i=0; i < lengthStudents; i++) {
-                const studsLoop = i + 1;
-                //console.log(studsLoop);
-                const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);
-        tableCreator.setElementAttributeOf(newCell)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreCell`);
-        tableCreator.setElementAttributeOf(newCell)("class", "score");
-
-
-    /////////////////////////////////////-----------------------------------------------
-            // CREATE SPAN ELEMENT
-                const span = tableCreator.newElement("span");
-                tableCreator.setElementAttributeOf(span)("id", `student-${studsLoop}-assignment-${assignmentId }-scoreSpan`);
-                tableCreator.addChildTo(newCell)(span);
-                tableCreator.addTextContentTo(span)("");
-
-
-            // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
-                const addScoreButton = tableCreator.newElement("button");
-                tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreButton`);
-                tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
-                tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studsLoop}`);
-                tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${assignmentId}`);
-                tableCreator.setElementAttributeOf(addScoreButton)("style", "cursor: pointer");
-                const plusIcon = tableCreator.newElement("i");
-                //<i class="material-icons">face</i>
-                tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
-                //tableCreator.setElementAttributeOf(plusIcon)("class", "material-icons");
-                //tableCreator.addInnerHtmlTo(plusIcon)("face");
-
-                tableCreator.addChildTo(addScoreButton)(plusIcon);
-
-                //tableCreator.setElementAttributeOf(addScoreButton)("onclick", "addScore(x,y)");
-
-                //console.log(addScoreButton.dataset);
-                tableCreator.addChildTo(newCell)(addScoreButton);
-                document.querySelector(".addScoreButton").style.cursor = "pointer";
-
-                // const cancelScoreButton = tableCreator.newElement("button");
-                // tableCreator.setElementAttributeOf(cancelScoreButton)("id", "cancelScoreButton");
-                // tableCreator.addChildTo(newCell)(cancelScoreButton);
-
-                const x = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.student;
-                const y = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.assignment;
+//         document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton`).style.cursor = "pointer";
 
 
 
-                addScoreButton.addEventListener('click', function() {
-                    if(addScoreInputDivOpen == true) {
-                        return;
-                    }
-                    addScoreInputDivOpen = true;
+
+
+//     //tableCreator.setElementAttributeOf(shit)("style", "background-color: purple; border: purple");
+//         // ADD PLACEHOLDER CELLS FOR ASSIGNMENT SCORES FOR EACH STUDENT
+//             for(i=0; i < lengthStudents; i++) {
+//                 const studsLoop = i + 1;
+//                 //console.log(studsLoop);
+//                 const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);
+//         tableCreator.setElementAttributeOf(newCell)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreCell`);
+//         tableCreator.setElementAttributeOf(newCell)("class", "score");
+
+
+//     /////////////////////////////////////-----------------------------------------------
+//             // CREATE SPAN ELEMENT
+//                 const span = tableCreator.newElement("span");
+//                 tableCreator.setElementAttributeOf(span)("id", `student-${studsLoop}-assignment-${assignmentId }-scoreSpan`);
+//                 tableCreator.addChildTo(newCell)(span);
+//                 tableCreator.addTextContentTo(span)("");
+
+
+//             // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
+//                 const addScoreButton = tableCreator.newElement("button");
+//                 tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreButton`);
+//                 tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
+//                 tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studsLoop}`);
+//                 tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${assignmentId}`);
+//                 tableCreator.setElementAttributeOf(addScoreButton)("style", "cursor: pointer");
+//                 const plusIcon = tableCreator.newElement("i");
+//                 //<i class="material-icons">face</i>
+//                 tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
+//                 //tableCreator.setElementAttributeOf(plusIcon)("class", "material-icons");
+//                 //tableCreator.addInnerHtmlTo(plusIcon)("face");
+
+//                 tableCreator.addChildTo(addScoreButton)(plusIcon);
+
+//                 //tableCreator.setElementAttributeOf(addScoreButton)("onclick", "addScore(x,y)");
+
+//                 //console.log(addScoreButton.dataset);
+//                 tableCreator.addChildTo(newCell)(addScoreButton);
+//                 document.querySelector(".addScoreButton").style.cursor = "pointer";
+
+//                 // const cancelScoreButton = tableCreator.newElement("button");
+//                 // tableCreator.setElementAttributeOf(cancelScoreButton)("id", "cancelScoreButton");
+//                 // tableCreator.addChildTo(newCell)(cancelScoreButton);
+
+//                 const x = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.student;
+//                 const y = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.assignment;
+
+
+
+//                 addScoreButton.addEventListener('click', function() {
+//                     if(addScoreInputDivOpen == true) {
+//                         return;
+//                     }
+//                     addScoreInputDivOpen = true;
                     
-                    document.querySelector('#addScoreDiv').style.display = "block";
+//                     document.querySelector('#addScoreDiv').style.display = "block";
     
-                    state.pop();
-                    state.pop();
+//                     state.pop();
+//                     state.pop();
 
-                    state.push(addScoreButton.dataset.student);
-                    state.push(addScoreButton.dataset.assignment);
-
-
-                    console.log("+++++++++++**********************&&&&&&&&&&%%%%%");
-                    document.querySelector('#addScoreDiv').className = "addStudentDiv";
-                });
-
-                //document.querySelector('#cancelScoreButton').addEventListener('click', cancelScore);
+//                     state.push(addScoreButton.dataset.student);
+//                     state.push(addScoreButton.dataset.assignment);
 
 
-    ////////////////////////////////////// ---------------------------------
+//                     console.log("+++++++++++**********************&&&&&&&&&&%%%%%");
+//                     document.querySelector('#addScoreDiv').className = "addStudentDiv";
+//                 });
 
-                //console.log(document.querySelector(`#student-${studsLoop}-assignment-${assignArrayLength}`));
-            }
-
-    //////////  TOTALS ROW CREATION
-            if(assignmentsArray.length == 1) {
-
-                // CREATE STUDENT TOTAL ROW
-                    const studentTotalRow = tableCreator.newElement("tr");
-                    tableCreator.setElementAttributeOf(studentTotalRow)("id", "studentTotalsRow");
-                    tableCreator.setElementAttributeOf(studentTotalRow)("style", "background-color: rgb(255, 81, 0)");
-                // ADD ROW TO TABLE
-                    //tableCreator.addChildTo(classTable)(studentTotalRow);
-                    tableCreator.addInsideAfterLastChild(classTable)(studentTotalRow);
-
-                // CREATE HEADER TAG
-                    const headerTag = tableCreator.newElement("th");
-                // ADD HEADER TAG TO ROW
-                    tableCreator.addChildTo(studentTotalRow)(headerTag);
-                    tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
-                    tableCreator.addTextContentTo(headerTag)("");
-
-                // CREATE th ELEMENT
-                    const totalTh = tableCreator.newElement("th");
-                    tableCreator.setElementAttributeOf(totalTh)("id", "totalPossibleFinal");
-                    const totalPossibleFinal = document.querySelector(`#totalPossibleFinal`);
-                    console.log(totalPossibleFinal);
-                    tableCreator.addChildTo(studentTotalRow)(totalTh);
-                    const studentTotal = tableCreator.addTextContentTo(totalTh)("Total Possible Row");
+//                 //document.querySelector('#cancelScoreButton').addEventListener('click', cancelScore);
 
 
-            console.log(`${lengthStudents} + + + + + + + + + + + + `);
-            for(i=0; i < studentsArray.length; i++) {
-                console.log(i);
-            }
-                for(i=0; i < studentsArray.length; i++) {
-                console.log(i);
-                    console.log("TOTALS ROW TEST %%%$$$$%%%%$$$$%%%%$$$$");
-                // CREATE th HEADER FOR STUDENT TOTAL
-                    const studentTotalHeader = tableCreator.newElement("th");
-                // SET CLASS OF NEW th ELEMENT
-                    tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${i+1}`);
-                    console.log(studentTotalHeader);
-                // SET TEXT OF NEW th ELEMENT
-                console.log("550 550 550 550 550");
-                //testOneTwo();
-                //studentTotalBottom(better);
-                var better = i + 1;
-                console.log(better);
-                //console.log(studentTotalBottom(i));
-                // if(studentTotalBottom(i)) {
-                //     tableCreator.addTextContentTo(studentTotalHeader)("poop test");
-                // }
+//     ////////////////////////////////////// ---------------------------------
 
-                    //var finalTotal = studentTotalBottom(better);
-                    //console.log(finalTotal);
-                    //tableCreator.addTextContentTo(studentTotalHeader)(`${finalTotal}`);
-                tableCreator.addTextContentTo(studentTotalHeader)("poop test");
-                // ADD th ELEMENT TO TOTALS ROW
-                    tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
-            }
-        }
+//                 //console.log(document.querySelector(`#student-${studsLoop}-assignment-${assignArrayLength}`));
+//             }
 
+//     //////////  TOTALS ROW CREATION
+//             if(assignmentsArray.length == 1) {
+
+//                 // CREATE STUDENT TOTAL ROW
+//                     const studentTotalRow = tableCreator.newElement("tr");
+//                     tableCreator.setElementAttributeOf(studentTotalRow)("id", "studentTotalsRow");
+//                     tableCreator.setElementAttributeOf(studentTotalRow)("style", "background-color: rgb(255, 81, 0)");
+//                 // ADD ROW TO TABLE
+//                     //tableCreator.addChildTo(classTable)(studentTotalRow);
+//                     tableCreator.addInsideAfterLastChild(classTable)(studentTotalRow);
+
+//                 // CREATE HEADER TAG
+//                     const headerTag = tableCreator.newElement("th");
+//                 // ADD HEADER TAG TO ROW
+//                     tableCreator.addChildTo(studentTotalRow)(headerTag);
+//                     tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+//                     tableCreator.addTextContentTo(headerTag)("");
+
+//                 // CREATE th ELEMENT
+//                     const totalTh = tableCreator.newElement("th");
+//                     tableCreator.setElementAttributeOf(totalTh)("id", "totalPossibleFinal");
+//                     const totalPossibleFinal = document.querySelector(`#totalPossibleFinal`);
+//                     console.log(totalPossibleFinal);
+//                     tableCreator.addChildTo(studentTotalRow)(totalTh);
+//                     const studentTotal = tableCreator.addTextContentTo(totalTh)("Total Possible Row");
+
+
+//             console.log(`${lengthStudents} + + + + + + + + + + + + `);
+//             for(i=0; i < studentsArray.length; i++) {
+//                 console.log(i);
+//             }
+//                 for(i=0; i < studentsArray.length; i++) {
+//                 console.log(i);
+//                     console.log("TOTALS ROW TEST %%%$$$$%%%%$$$$%%%%$$$$");
+//                 // CREATE th HEADER FOR STUDENT TOTAL
+//                     const studentTotalHeader = tableCreator.newElement("th");
+//                 // SET CLASS OF NEW th ELEMENT
+//                     tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${i+1}`);
+//                     console.log(studentTotalHeader);
+//                 // SET TEXT OF NEW th ELEMENT
+//                 console.log("550 550 550 550 550");
+//                 //testOneTwo();
+//                 //studentTotalBottom(better);
+//                 var better = i + 1;
+//                 console.log(better);
+//                 //console.log(studentTotalBottom(i));
+//                 // if(studentTotalBottom(i)) {
+//                 //     tableCreator.addTextContentTo(studentTotalHeader)("poop test");
+//                 // }
+
+//                     //var finalTotal = studentTotalBottom(better);
+//                     //console.log(finalTotal);
+//                     //tableCreator.addTextContentTo(studentTotalHeader)(`${finalTotal}`);
+//                 tableCreator.addTextContentTo(studentTotalHeader)("poop test");
+//                 // ADD th ELEMENT TO TOTALS ROW
+//                     tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
+//             }
+//         }
+
+// }
+
+
+
+const checkStor = JSON.parse(localStorage.getItem('noob'));
+console.log(checkStor);
+
+console.log(coursesArray);
+if(checkStor) {
+    console.log('workinggggggggggggggggggggggg');
+    coursesArray = [...checkStor];
+    console.log(coursesArray);
 }
 
-
-
-const finalCourseArray = [];
-
-
-
-
-
+console.log(coursesArray);
 
 function addClassToTable() {
     console.log("addClassToTable");
@@ -1666,21 +1540,18 @@ function addClassToTable() {
         return;
     }
 
-
-
-    // function createCourse(title) {
-    //     return new Course(title); 
-    // }
-        // console.log(createCourse(courseTitle));
-    // console.log(courseTitle);
-
+    // CREATE COURSE OBJECT
+    console.log(coursesArray);
 
     const courseName = new Course(courseTitle);
-    courseName.courseName = courseTitle;
     coursesArray.push(courseName);
     console.log(coursesArray);
-    console.log(courseName);
-    console.log(courseName.id);
+
+    // ADD COURSE OBJECT TO LOCAL STORAGE
+    localStorage.setItem('noob', JSON.stringify(coursesArray));
+    const data = JSON.parse(localStorage.getItem('noob'));
+    console.log(data);
+        
         
     // const gary = Object.assign({}, classesMap.get(`literature 101`));
     // console.log(gary);
@@ -1688,13 +1559,8 @@ function addClassToTable() {
     // console.log(gary);
     
 
-
-
-
-
-
     classDiv.style.display = "block";
-    console.log(classDiv);
+    //console.log(classDiv);
     document.getElementById("addClassDiv").style.display = "none";
     document.querySelector('#classContainer').className = "table_container";
 
@@ -1745,15 +1611,11 @@ function addClassToTable() {
 
 
 
-
-
 function addStudentToTable() {
     console.log("addStudentToTable");
     //console.log(courseName);
 
     const classText = document.querySelector('#addStudentInputField').value;
-
-
 
 
     if(classText == ""){
@@ -1767,10 +1629,6 @@ function addStudentToTable() {
 
 
     if(coursesArray[0].assignments.length < 1 && coursesArray[0].students.length < 1) {
-        const studentName = new Student(classText);
-        coursesArray[0].studArray = studentName;
-        console.log(coursesArray[0].students);
-
         console.log("first condition test");
     // CREATE STUDENT NAME ROW
         const studentNameRow = tableCreator.newElement("tr");
@@ -1792,6 +1650,19 @@ function addStudentToTable() {
         tableCreator.addChildTo(studentNameRow)(totalTh);
         tableCreator.addTextContentTo(totalTh)("TOTAL");
     }
+
+    const studentName = new Student(classText);
+    coursesArray[0].studArray = studentName;
+    console.log(coursesArray[0].students);
+
+    console.log(coursesArray);
+    // ADD COURSE OBJECT TO LOCAL STORAGE
+    localStorage.setItem('noob', JSON.stringify(coursesArray));
+    const data = JSON.parse(localStorage.getItem('noob'));
+    console.log(data);
+        
+
+
 console.log(coursesArray[0].assignments.length);
     if(coursesArray[0].assignments.length < 1) {
                 console.log("second condition test poop");
@@ -1861,15 +1732,17 @@ console.log(coursesArray[0].assignments.length);
                 studentsArray.push(first);
 
     }
-console.log(coursesArray[0]);
-console.log(coursesArray[0].assignments);
-console.log(coursesArray[0].students);
+
+    console.log(coursesArray[0]);
+    console.log(coursesArray[0].assignments);
+    console.log(coursesArray[0].students);
+
     if(coursesArray[0].assignments.length >= 1) {
         console.log("third condition test");
         studentLabelArray.pop();
 
         // ADD th ELEMENT TO STUDENT ROW
-            const studentId = studentsArray.length + 1;
+            const studentId = coursesArray[0].students.length + 1;
             const secondTh = tableCreator.newElement("th");
             tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader`);
 
@@ -2032,27 +1905,23 @@ console.log(secondTh);
 
 
 
-
-
 function addAssignmentToTable() {
     console.log("addAssignmentToTable");
     const classText = document.querySelector('#addAssignmentInputField').value;
-
-    const studentName = new Student(classText);
-    coursesArray[0].studArray = studentName;
-
-
 
     if(classText == ""){
         return;
     }
 
     document.querySelector('#classContainer').style.display = "block";
-    document.querySelector('#addAssignmentDiv').style.display = "none";
+    document.querySelector('#addAssignmentDiv').style.display = "none";  
     document.querySelector('#classContainer').className = "table_container";
 
 
     if(coursesArray[0].assignments.length < 1 && coursesArray[0].students.length < 1) {
+
+
+        console.log(`ass total row test`);
 
         // CREATE STUDENT NAME ROW
             const studentNameRow = tableCreator.newElement("tr");
@@ -2069,8 +1938,25 @@ function addAssignmentToTable() {
         // CREATE th ELEMENT
             const totalTh = tableCreator.newElement("th");
             tableCreator.addChildTo(studentNameRow)(totalTh);
-            const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
+            const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL@@");
     }
+
+    const assignmentTitle = new Assignment(classText, "");
+    console.log(assignmentTitle);
+    coursesArray[0].assArray = assignmentTitle;
+    console.log(coursesArray[0].assignments);
+
+    console.log(coursesArray);
+    // ADD COURSE OBJECT TO LOCAL STORAGE
+    localStorage.setItem('noob', JSON.stringify(coursesArray));
+    const data = JSON.parse(localStorage.getItem('noob'));
+    console.log(data);
+        
+
+
+
+
+
 
     
     console.log(coursesArray[0].assignments[2]);
@@ -2079,7 +1965,7 @@ function addAssignmentToTable() {
     console.log(coursesArray[0].assignments.length);
     console.log(coursesArray[0].assignments.length + 1);
     
-    let assignmentId = coursesArray[0].assignments.length + 1;
+    let assignmentId = coursesArray[0].assignments.length;
     // INSERT ASSIGNMENT ROW 
         console.log("add assignment row test @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         const assignmentRow = classTable.insertRow(assignmentId);
@@ -2087,9 +1973,7 @@ function addAssignmentToTable() {
             tableCreator.setElementAttributeOf(assignmentRow)("id", `${assignmentId}`);
             tableCreator.setElementAttributeOf(assignmentRow)("data-id", `${assignmentId}`);
             console.log(assignmentRow);
-    
-
-    // CREATE th FOR NEW ASSIGNMENT
+     
         const assignmentName = tableCreator.newElement("th");
         tableCreator.addChildTo(assignmentRow)(assignmentName);
         tableCreator.setElementAttributeOf(assignmentName)("class", "headerCorrect");
@@ -2138,31 +2022,31 @@ function addAssignmentToTable() {
         }
 
 
-
         document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton`).style.cursor = "pointer";
-
 
         console.log(editAssignmentNameButton);
 
+        var correctCell = coursesArray[0].assignments.length - 1;
 
-
-
- 
     // PUSH NEW ASSIGNMENT tr ELEMENT TO ASSIGNMENTS ARRAY
         //const nextAssignment = new Assignment(assignmentText, assignmentRow);
-
-        coursesArray[0].assignments.row = assignmentRow;
+        console.log(coursesArray[0].assignments);
+        console.log(correctCell);
+        coursesArray[0].assignments[correctCell].row = assignmentRow;
+        console.log(coursesArray[0].assignments[0].newRow);
 
         assignmentsArray.push(assignmentRow);
         console.log(assignmentsArray);
         console.log(assignmentsArray.length);
 
-        var correctCell = coursesArray[0].assignments.length - 1;
         var lengthStudents = coursesArray[0].students.length;
-        console.log(lenghtStudents);
+        console.log(lengthStudents);
 
     // ADD PLACEHOLDER CELL FOR TOTAL POSSIBLE POINTS TO NEW ASSIGNMENT ROW
-        const newCell = tableCreator.addCellTo(coursesArray[0].assignments[correctCell])(-1);
+    console.log(coursesArray[0].assignments[correctCell].row);
+    console.log(correctCell);
+        const newCell = tableCreator.addCellTo(coursesArray[0].assignments[correctCell].newRow)(-1);
+        console.log(newCell);
         const studentId = coursesArray[0].students.length;
         const assignmentArrayLength = coursesArray[0].assignments.length;
 
@@ -2221,9 +2105,10 @@ function addAssignmentToTable() {
 
     //tableCreator.setElementAttributeOf(shit)("style", "background-color: purple; border: purple");
         // ADD PLACEHOLDER CELLS FOR ASSIGNMENT SCORES FOR EACH STUDENT
-            for(i=0; i < lengthStudents; i++) {
+        console.log(coursesArray[0].students);
+            for(i=0; i < coursesArray[0].students.length; i++) {
                 const studsLoop = i + 1;
-                //console.log(studsLoop);
+                console.log(studsLoop);
                 const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);
         tableCreator.setElementAttributeOf(newCell)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreCell`);
         tableCreator.setElementAttributeOf(newCell)("class", "score");
@@ -2240,6 +2125,334 @@ function addAssignmentToTable() {
             // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
                 const addScoreButton = tableCreator.newElement("button");
                 tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreButton`);
+                tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
+                tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studsLoop}`);
+                tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${assignmentId}`);
+                tableCreator.setElementAttributeOf(addScoreButton)("style", "cursor: pointer");
+                const plusIcon = tableCreator.newElement("i");
+                //<i class="material-icons">face</i>
+                tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
+                //tableCreator.setElementAttributeOf(plusIcon)("class", "material-icons");
+                //tableCreator.addInnerHtmlTo(plusIcon)("face");
+
+                tableCreator.addChildTo(addScoreButton)(plusIcon);
+
+                //tableCreator.setElementAttributeOf(addScoreButton)("onclick", "addScore(x,y)");
+
+                //console.log(addScoreButton.dataset);
+                tableCreator.addChildTo(newCell)(addScoreButton);
+                document.querySelector(".addScoreButton").style.cursor = "pointer";
+
+                // const cancelScoreButton = tableCreator.newElement("button");
+                // tableCreator.setElementAttributeOf(cancelScoreButton)("id", "cancelScoreButton");
+                // tableCreator.addChildTo(newCell)(cancelScoreButton);
+
+                const x = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.student;
+                const y = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.assignment;
+
+
+
+                addScoreButton.addEventListener('click', function() {
+                    if(addScoreInputDivOpen == true) {
+                        return;
+                    }
+                    addScoreInputDivOpen = true;
+                    
+                    document.querySelector('#addScoreDiv').style.display = "block";
+    
+                    state.pop();
+                    state.pop();
+
+                    state.push(addScoreButton.dataset.student);
+                    state.push(addScoreButton.dataset.assignment);
+
+
+                    console.log("+++++++++++**********************&&&&&&&&&&%%%%%");
+                    document.querySelector('#addScoreDiv').className = "addStudentDiv";
+                });
+
+                //document.querySelector('#cancelScoreButton').addEventListener('click', cancelScore);
+
+
+////////////////////////////////////// ---------------------------------
+
+                //console.log(document.querySelector(`#student-${studsLoop}-assignment-${assignArrayLength}`));
+            }
+
+//////////  TOTALS ROW CREATION
+            console.log(coursesArray[0].assignments);
+            if(coursesArray[0].assignments.length == 1) {
+
+                // CREATE STUDENT TOTAL ROW
+                    const studentTotalRow = tableCreator.newElement("tr");
+                    tableCreator.setElementAttributeOf(studentTotalRow)("id", "studentTotalsRow");
+                    tableCreator.setElementAttributeOf(studentTotalRow)("style", "background-color: rgb(255, 81, 0)");
+                // ADD ROW TO TABLE
+                    //tableCreator.addChildTo(classTable)(studentTotalRow);
+                    tableCreator.addInsideAfterLastChild(classTable)(studentTotalRow);
+
+                // CREATE HEADER TAG
+                    const headerTag = tableCreator.newElement("th");
+                // ADD HEADER TAG TO ROW
+                    tableCreator.addChildTo(studentTotalRow)(headerTag);
+                    tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+                    tableCreator.addTextContentTo(headerTag)("");
+
+                // CREATE th ELEMENT
+                    const totalTh = tableCreator.newElement("th");
+                    tableCreator.setElementAttributeOf(totalTh)("id", "totalPossibleFinal");
+                    const totalPossibleFinal = document.querySelector(`#totalPossibleFinal`);
+                    console.log(totalPossibleFinal);
+                    tableCreator.addChildTo(studentTotalRow)(totalTh);
+                    tableCreator.addTextContentTo(totalTh)("Total Possible Row");
+
+
+            //console.log(`${coursesArray[0].students} + + + + + + + + + + + + `);
+            // for(i=0; i < coursesArray[0].students.length; i++) {
+            //     console.log(i);
+            // }
+                for(i=0; i < coursesArray[0].students.length; i++) {
+                console.log(i);
+                    console.log("TOTALS ROW TEST %%%$$$$%%%%$$$$%%%%$$$$");
+                // CREATE th HEADER FOR STUDENT TOTAL
+                    const studentTotalHeader = tableCreator.newElement("th");
+                // SET CLASS OF NEW th ELEMENT
+                    tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${i+1}`);
+                    console.log(studentTotalHeader);
+                // SET TEXT OF NEW th ELEMENT
+                console.log("550 550 550 550 550");
+                //testOneTwo();
+                //studentTotalBottom(better);
+                var better = i + 1;
+                console.log(better);
+                //console.log(studentTotalBottom(i));
+                // if(studentTotalBottom(i)) {
+                //     tableCreator.addTextContentTo(studentTotalHeader)("poop test");
+                // }
+
+                    //var finalTotal = studentTotalBottom(better);
+                    //console.log(finalTotal);
+                    //tableCreator.addTextContentTo(studentTotalHeader)(`${finalTotal}`);
+                tableCreator.addTextContentTo(studentTotalHeader)("poop test");
+                // ADD th ELEMENT TO TOTALS ROW
+                    tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
+            }
+        }
+}
+
+
+
+
+
+
+
+
+function addAssignmentToTablePersist() {
+    console.log("addAssignmentToTable");
+    const classText = document.querySelector(`#addAssignmentInputField-course${a}`).value;
+
+    const studentName = new Student(classText);
+    coursesArray[0].studArray = studentName;
+
+
+
+    if(classText == ""){
+        return;
+    }
+
+    document.querySelector('#classContainer').style.display = "block";
+    document.querySelector('#addAssignmentDiv').style.display = "none";
+    document.querySelector('#classContainer').className = "table_container";
+
+
+    if(coursesArray[0].assignments.length < 1 && coursesArray[0].students.length < 1) {
+
+        // CREATE STUDENT NAME ROW
+            const studentNameRow = tableCreator.newElement("tr");
+            tableCreator.setElementAttributeOf(studentNameRow)("id", `studentNamesRow-course${a}`);
+            tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
+            tableCreator.addChildTo(classTable)(studentNameRow);
+
+        // CREATE HEADER TAG
+            const headerTag = tableCreator.newElement("th");
+            tableCreator.addChildTo(studentNameRow)(headerTag);
+            tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+            tableCreator.addTextContentTo(headerTag)("");
+
+        // CREATE th ELEMENT
+            const totalTh = tableCreator.newElement("th");
+            tableCreator.addChildTo(studentNameRow)(totalTh);
+            const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
+    }
+
+    
+    console.log(coursesArray[0].assignments[2]);
+    console.log(coursesArray[0].assignments);
+    console.log(coursesArray[0].assignments[3]);
+    console.log(coursesArray[0].assignments.length);
+    console.log(coursesArray[0].assignments.length + 1);
+    
+    let assignmentId = coursesArray[0].assignments.length + 1;
+    // INSERT ASSIGNMENT ROW 
+        console.log("add assignment row test @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        const assignmentRow = classTable.insertRow(assignmentId);
+    // SET ATTRIBUTES FOR NEW ASSIGNMENT tr
+            tableCreator.setElementAttributeOf(assignmentRow)("id", `${assignmentId}-course${a}`);
+            tableCreator.setElementAttributeOf(assignmentRow)("data-id", `${assignmentId}`);
+            console.log(assignmentRow);
+    
+
+    // CREATE th FOR NEW ASSIGNMENT
+        const assignmentName = tableCreator.newElement("th");
+        tableCreator.addChildTo(assignmentRow)(assignmentName);
+        tableCreator.setElementAttributeOf(assignmentName)("class", "headerCorrect");
+
+                // CREATE NEW SPAN
+                    const assignmentSpan = tableCreator.newElement("span");
+                    console.log(assignmentSpan);
+                    tableCreator.addChildTo(assignmentName)(assignmentSpan);
+                    tableCreator.setElementAttributeOf(assignmentSpan)("id", `student-${assignmentId}-assignmentNameSpan-course${a}`);
+    
+        // ADD TEXT TO ASSIGNMENT SPAN
+            const assignmentText = document.querySelector('#addAssignmentInputFieldPersist').value;
+
+            tableCreator.addTextContentTo(assignmentSpan)(`${assignmentText}`);
+            tableCreator.setElementAttributeOf(assignmentSpan)("id", `assignment-${assignmentId}-assignmentSpan-course${a}`);
+
+            tableCreator.setElementAttributeOf(assignmentName)("data-assignmentName", `${assignmentText}`);
+
+    
+    
+    // CREATE EDIT BUTTON FOR NEW ASSIGNMENT
+    const editAssignmentNameButton = tableCreator.newElement("button");
+        tableCreator.setElementAttributeOf(editAssignmentNameButton)("id", `assignment-${assignmentId}-editAssignmentNameButton-course${a}`); 
+        tableCreator.setElementAttributeOf(editAssignmentNameButton)("data-assignmentId", `${assignmentId}`); 
+
+        tableCreator.addTextContentTo(editAssignmentNameButton)("+");
+        console.log(":::::::::::::::::::::::::::::::::::::::::::::");
+        console.log(assignmentName);
+        tableCreator.addChildTo(assignmentName)(editAssignmentNameButton);
+
+        document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton-course${a}`).addEventListener("click", openEditAssignmentLabelDiv);
+            
+            
+        function openEditAssignmentLabelDiv() {
+
+            changeClassName("#classContainer")("blur");
+
+            console.log(editAssignmentNameButton.dataset.assignmentid);
+            assignmentLabelArray.push(editAssignmentNameButton.dataset.assignmentid);
+            console.log(assignmentLabelArray);
+
+
+            console.log("openEditAssignmentLabelDiv is invoked ! ! ! ! ! ")
+            const editAssignmentLabelDiv = document.querySelector('#addAssignmentLabelDivPersist');
+            tableCreator.setElementAttributeOf(editAssignmentLabelDiv)("class", "addStudentDiv");
+        }
+
+
+
+        document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton-course${a}`).style.cursor = "pointer";
+
+
+        console.log(editAssignmentNameButton);
+
+
+
+
+ 
+    // PUSH NEW ASSIGNMENT tr ELEMENT TO ASSIGNMENTS ARRAY
+        //const nextAssignment = new Assignment(assignmentText, assignmentRow);
+
+        coursesArray[0].assignments.row = assignmentRow;
+
+        assignmentsArray.push(assignmentRow);
+        console.log(assignmentsArray);
+        console.log(assignmentsArray.length);
+
+        var correctCell = coursesArray[0].assignments.length - 1;
+        var lengthStudents = coursesArray[0].students.length;
+        console.log(lenghtStudents);
+
+    // ADD PLACEHOLDER CELL FOR TOTAL POSSIBLE POINTS TO NEW ASSIGNMENT ROW
+        const newCell = tableCreator.addCellTo(coursesArray[0].assignments[correctCell])(-1);
+        const studentId = coursesArray[0].students.length;
+        const assignmentArrayLength = coursesArray[0].assignments.length;
+
+    // CREATE NEW SPAN
+        console.log(assignmentArrayLength);
+        const totalPossibleSpan = tableCreator.newElement("span");
+        console.log(totalPossibleSpan);
+        tableCreator.addChildTo(newCell)(totalPossibleSpan);
+        tableCreator.setElementAttributeOf(totalPossibleSpan)("id", `assignment-${assignmentArrayLength}-totalPossibleSpan-course${a}`);
+        tableCreator.setElementAttributeOf(document.querySelector(`#assignment-${assignmentArrayLength}-totalPossibleSpan-course${a}`))("data-totalpossible", `${assignmentArrayLength}`);
+ 
+ 
+    // ADD EDIT BUTTON TO TOTAL POSSIBLE 
+        const editTotalPossibleButton = tableCreator.newElement("button");
+        tableCreator.setElementAttributeOf(editTotalPossibleButton)("id", `assignment-${assignmentArrayLength}-editTotalPossibleButton`); 
+        tableCreator.addTextContentTo(editTotalPossibleButton)("+");
+        console.log(":::::::::::::::::::::::::::::::::::::::::::::");
+        console.log(assignmentName);
+        tableCreator.addChildTo(newCell)(editTotalPossibleButton);
+
+        document.querySelector(`#assignment-${assignmentArrayLength}-editTotalPossibleButton-course${a}`).style.cursor = "pointer";
+
+
+        console.log(editTotalPossibleButton);
+
+        document.querySelector(`#assignment-${assignmentArrayLength}-editTotalPossibleButton-course${a}`).addEventListener("click", openEditTotalPossibleDivPersist);
+            
+            
+        function openEditTotalPossibleDiv() {
+            console.log("openEditTotalPossibleDiv *******************");
+            console.log(assignmentArrayLength);
+
+
+            changeClassName("#classContainer")("blur");
+
+            const totalSpan = document.querySelector(`#assignment-${assignmentArrayLength}-totalPossibleSpan-course${a}`);
+
+            console.log(totalSpan);
+            console.log(totalSpan.dataset.totalpossible);
+            totalPossibleArray.push(totalSpan.dataset.totalpossible);
+            console.log(totalPossibleArray);
+
+
+            console.log("openEditTotalPossibleDiv is invoked ! ! ! ! ! ")
+            const editTotalPossibleDiv = document.querySelector('#editTotalPossibleDivPersist');
+            tableCreator.setElementAttributeOf(editTotalPossibleDiv)("class", "addStudentDiv");
+        }
+
+
+
+        document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton-course${a}`).style.cursor = "pointer";
+
+
+
+
+
+    //tableCreator.setElementAttributeOf(shit)("style", "background-color: purple; border: purple");
+        // ADD PLACEHOLDER CELLS FOR ASSIGNMENT SCORES FOR EACH STUDENT
+            for(i=0; i < lengthStudents; i++) {
+                const studsLoop = i + 1;
+                //console.log(studsLoop);
+                const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);
+        tableCreator.setElementAttributeOf(newCell)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreCell-course${a}`);
+        tableCreator.setElementAttributeOf(newCell)("class", "score");
+
+
+/////////////////////////////////////-----------------------------------------------
+            // CREATE SPAN ELEMENT
+                const span = tableCreator.newElement("span");
+                tableCreator.setElementAttributeOf(span)("id", `student-${studsLoop}-assignment-${assignmentId }-scoreSpan-course${a}`);
+                tableCreator.addChildTo(newCell)(span);
+                tableCreator.addTextContentTo(span)("");
+
+
+            // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
+                const addScoreButton = tableCreator.newElement("button");
+                tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreButton-course${a}`);
                 tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
                 tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studsLoop}`);
                 tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${assignmentId}`);
@@ -2314,8 +2527,8 @@ function addAssignmentToTable() {
 
                 // CREATE th ELEMENT
                     const totalTh = tableCreator.newElement("th");
-                    tableCreator.setElementAttributeOf(totalTh)("id", "totalPossibleFinal");
-                    const totalPossibleFinal = document.querySelector(`#totalPossibleFinal`);
+                    tableCreator.setElementAttributeOf(totalTh)("id", `totalPossibleFinal-course${a}`);
+                    const totalPossibleFinal = document.querySelector(`#totalPossibleFinal-course${a}`);
                     console.log(totalPossibleFinal);
                     tableCreator.addChildTo(studentTotalRow)(totalTh);
                     tableCreator.addTextContentTo(totalTh)("Total Possible Row");
@@ -2331,7 +2544,7 @@ function addAssignmentToTable() {
                 // CREATE th HEADER FOR STUDENT TOTAL
                     const studentTotalHeader = tableCreator.newElement("th");
                 // SET CLASS OF NEW th ELEMENT
-                    tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${i+1}`);
+                    tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${i+1}-course${a}`);
                     console.log(studentTotalHeader);
                 // SET TEXT OF NEW th ELEMENT
                 console.log("550 550 550 550 550");
@@ -2360,615 +2573,288 @@ function addAssignmentToTable() {
 
 
 
+function addStudentToTablePersist() {
+    console.log("addStudentToTablePersist");
+    //console.log(courseName);
 
-// function addAssignmentToTablePersist() {
-//     console.log("addAssignmentToTable");
-//     const classText = document.querySelector(`#addAssignmentInputField-course${a}`).value;
+    const classText = document.querySelector(`#addStudentInputField-course${a}`).value;
 
-//     const studentName = new Student(classText);
-//     coursesArray[0].studArray = studentName;
 
+    const studentName = new Student(classText);
+    coursesArray[0].studArray = studentName;
 
 
-//     if(classText == ""){
-//         return;
-//     }
 
-//     document.querySelector('#classContainer').style.display = "block";
-//     document.querySelector('#addAssignmentDiv').style.display = "none";
-//     document.querySelector('#classContainer').className = "table_container";
 
+    if(classText == ""){
+        return;
+    }
 
-//     if(coursesArray[0].assignments.length < 1 && coursesArray[0].students.length < 1) {
+    document.querySelector('#classContainer').style.display = "block";
+    document.querySelector('#addStudentDiv').style.display = "none";
+    document.querySelector('#classContainer').className = "table_container";
 
-//         // CREATE STUDENT NAME ROW
-//             const studentNameRow = tableCreator.newElement("tr");
-//             tableCreator.setElementAttributeOf(studentNameRow)("id", `studentNamesRow-course${a}`);
-//             tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
-//             tableCreator.addChildTo(classTable)(studentNameRow);
 
-//         // CREATE HEADER TAG
-//             const headerTag = tableCreator.newElement("th");
-//             tableCreator.addChildTo(studentNameRow)(headerTag);
-//             tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
-//             tableCreator.addTextContentTo(headerTag)("");
 
-//         // CREATE th ELEMENT
-//             const totalTh = tableCreator.newElement("th");
-//             tableCreator.addChildTo(studentNameRow)(totalTh);
-//             const studentTotal = tableCreator.addTextContentTo(totalTh)("TOTAL");
-//     }
+    if(coursesArray[0].assignments.length < 1 && coursesArray[0].students.length < 1) {
+        console.log("first condition test");
+    // CREATE STUDENT NAME ROW
+        const studentNameRow = tableCreator.newElement("tr");
+        tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow-course${a}`");
+        tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
+        tableCreator.addChildTo(classTable)(studentNameRow);
 
-    
-//     console.log(coursesArray[0].assignments[2]);
-//     console.log(coursesArray[0].assignments);
-//     console.log(coursesArray[0].assignments[3]);
-//     console.log(coursesArray[0].assignments.length);
-//     console.log(coursesArray[0].assignments.length + 1);
-    
-//     let assignmentId = coursesArray[0].assignments.length + 1;
-//     // INSERT ASSIGNMENT ROW 
-//         console.log("add assignment row test @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-//         const assignmentRow = classTable.insertRow(assignmentId);
-//     // SET ATTRIBUTES FOR NEW ASSIGNMENT tr
-//             tableCreator.setElementAttributeOf(assignmentRow)("id", `${assignmentId}-course${a}`);
-//             tableCreator.setElementAttributeOf(assignmentRow)("data-id", `${assignmentId}`);
-//             console.log(assignmentRow);
-    
+    // CREATE HEADER TAG
+        const headerTag = tableCreator.newElement("th");
+        tableCreator.addChildTo(studentNameRow)(headerTag);
+        tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
+        tableCreator.addTextContentTo(headerTag)("");
 
-//     // CREATE th FOR NEW ASSIGNMENT
-//         const assignmentName = tableCreator.newElement("th");
-//         tableCreator.addChildTo(assignmentRow)(assignmentName);
-//         tableCreator.setElementAttributeOf(assignmentName)("class", "headerCorrect");
+    // CREATE th ELEMENT
+        const totalTh = tableCreator.newElement("th");
+        tableCreator.addChildTo(studentNameRow)(totalTh);
+        tableCreator.addTextContentTo(totalTh)("TOTAL");
+    }
 
-//                 // CREATE NEW SPAN
-//                     const assignmentSpan = tableCreator.newElement("span");
-//                     console.log(assignmentSpan);
-//                     tableCreator.addChildTo(assignmentName)(assignmentSpan);
-//                     tableCreator.setElementAttributeOf(assignmentSpan)("id", `student-${assignmentId}-assignmentNameSpan-course${a}`);
-    
-//         // ADD TEXT TO ASSIGNMENT SPAN
-//             const assignmentText = document.querySelector('#addAssignmentInputFieldPersist').value;
-
-//             tableCreator.addTextContentTo(assignmentSpan)(`${assignmentText}`);
-//             tableCreator.setElementAttributeOf(assignmentSpan)("id", `assignment-${assignmentId}-assignmentSpan-course${a}`);
-
-//             tableCreator.setElementAttributeOf(assignmentName)("data-assignmentName", `${assignmentText}`);
-
-    
-    
-//     // CREATE EDIT BUTTON FOR NEW ASSIGNMENT
-//     const editAssignmentNameButton = tableCreator.newElement("button");
-//         tableCreator.setElementAttributeOf(editAssignmentNameButton)("id", `assignment-${assignmentId}-editAssignmentNameButton-course${a}`); 
-//         tableCreator.setElementAttributeOf(editAssignmentNameButton)("data-assignmentId", `${assignmentId}`); 
-
-//         tableCreator.addTextContentTo(editAssignmentNameButton)("+");
-//         console.log(":::::::::::::::::::::::::::::::::::::::::::::");
-//         console.log(assignmentName);
-//         tableCreator.addChildTo(assignmentName)(editAssignmentNameButton);
-
-//         document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton-course${a}`).addEventListener("click", openEditAssignmentLabelDiv);
-            
-            
-//         function openEditAssignmentLabelDiv() {
-
-//             changeClassName("#classContainer")("blur");
-
-//             console.log(editAssignmentNameButton.dataset.assignmentid);
-//             assignmentLabelArray.push(editAssignmentNameButton.dataset.assignmentid);
-//             console.log(assignmentLabelArray);
-
-
-//             console.log("openEditAssignmentLabelDiv is invoked ! ! ! ! ! ")
-//             const editAssignmentLabelDiv = document.querySelector('#addAssignmentLabelDivPersist');
-//             tableCreator.setElementAttributeOf(editAssignmentLabelDiv)("class", "addStudentDiv");
-//         }
-
-
-
-//         document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton-course${a}`).style.cursor = "pointer";
-
-
-//         console.log(editAssignmentNameButton);
-
-
-
-
- 
-//     // PUSH NEW ASSIGNMENT tr ELEMENT TO ASSIGNMENTS ARRAY
-//         //const nextAssignment = new Assignment(assignmentText, assignmentRow);
-
-//         coursesArray[0].assignments.row = assignmentRow;
-
-//         assignmentsArray.push(assignmentRow);
-//         console.log(assignmentsArray);
-//         console.log(assignmentsArray.length);
-
-//         var correctCell = coursesArray[0].assignments.length - 1;
-//         var lengthStudents = coursesArray[0].students.length;
-//         console.log(lenghtStudents);
-
-//     // ADD PLACEHOLDER CELL FOR TOTAL POSSIBLE POINTS TO NEW ASSIGNMENT ROW
-//         const newCell = tableCreator.addCellTo(coursesArray[0].assignments[correctCell])(-1);
-//         const studentId = coursesArray[0].students.length;
-//         const assignmentArrayLength = coursesArray[0].assignments.length;
-
-//     // CREATE NEW SPAN
-//         console.log(assignmentArrayLength);
-//         const totalPossibleSpan = tableCreator.newElement("span");
-//         console.log(totalPossibleSpan);
-//         tableCreator.addChildTo(newCell)(totalPossibleSpan);
-//         tableCreator.setElementAttributeOf(totalPossibleSpan)("id", `assignment-${assignmentArrayLength}-totalPossibleSpan-course${a}`);
-//         tableCreator.setElementAttributeOf(document.querySelector(`#assignment-${assignmentArrayLength}-totalPossibleSpan-course${a}`))("data-totalpossible", `${assignmentArrayLength}`);
- 
- 
-//     // ADD EDIT BUTTON TO TOTAL POSSIBLE 
-//         const editTotalPossibleButton = tableCreator.newElement("button");
-//         tableCreator.setElementAttributeOf(editTotalPossibleButton)("id", `assignment-${assignmentArrayLength}-editTotalPossibleButton`); 
-//         tableCreator.addTextContentTo(editTotalPossibleButton)("+");
-//         console.log(":::::::::::::::::::::::::::::::::::::::::::::");
-//         console.log(assignmentName);
-//         tableCreator.addChildTo(newCell)(editTotalPossibleButton);
-
-//         document.querySelector(`#assignment-${assignmentArrayLength}-editTotalPossibleButton-course${a}`).style.cursor = "pointer";
-
-
-//         console.log(editTotalPossibleButton);
-
-//         document.querySelector(`#assignment-${assignmentArrayLength}-editTotalPossibleButton-course${a}`).addEventListener("click", openEditTotalPossibleDivPersist);
-            
-            
-//         function openEditTotalPossibleDiv() {
-//             console.log("openEditTotalPossibleDiv *******************");
-//             console.log(assignmentArrayLength);
-
-
-//             changeClassName("#classContainer")("blur");
-
-//             const totalSpan = document.querySelector(`#assignment-${assignmentArrayLength}-totalPossibleSpan-course${a}`);
-
-//             console.log(totalSpan);
-//             console.log(totalSpan.dataset.totalpossible);
-//             totalPossibleArray.push(totalSpan.dataset.totalpossible);
-//             console.log(totalPossibleArray);
-
-
-//             console.log("openEditTotalPossibleDiv is invoked ! ! ! ! ! ")
-//             const editTotalPossibleDiv = document.querySelector('#editTotalPossibleDivPersist');
-//             tableCreator.setElementAttributeOf(editTotalPossibleDiv)("class", "addStudentDiv");
-//         }
-
-
-
-//         document.querySelector(`#assignment-${assignmentId}-editAssignmentNameButton-course${a}`).style.cursor = "pointer";
-
-
-
-
-
-//     //tableCreator.setElementAttributeOf(shit)("style", "background-color: purple; border: purple");
-//         // ADD PLACEHOLDER CELLS FOR ASSIGNMENT SCORES FOR EACH STUDENT
-//             for(i=0; i < lengthStudents; i++) {
-//                 const studsLoop = i + 1;
-//                 //console.log(studsLoop);
-//                 const newCell = tableCreator.addCellTo(assignmentsArray[correctCell])(-1);
-//         tableCreator.setElementAttributeOf(newCell)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreCell-course${a}`);
-//         tableCreator.setElementAttributeOf(newCell)("class", "score");
-
-
-// /////////////////////////////////////-----------------------------------------------
-//             // CREATE SPAN ELEMENT
-//                 const span = tableCreator.newElement("span");
-//                 tableCreator.setElementAttributeOf(span)("id", `student-${studsLoop}-assignment-${assignmentId }-scoreSpan-course${a}`);
-//                 tableCreator.addChildTo(newCell)(span);
-//                 tableCreator.addTextContentTo(span)("");
-
-
-//             // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
-//                 const addScoreButton = tableCreator.newElement("button");
-//                 tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studsLoop}-assignment-${assignmentId}-scoreButton-course${a}`);
-//                 tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
-//                 tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studsLoop}`);
-//                 tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${assignmentId}`);
-//                 tableCreator.setElementAttributeOf(addScoreButton)("style", "cursor: pointer");
-//                 const plusIcon = tableCreator.newElement("i");
-//                 //<i class="material-icons">face</i>
-//                 tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
-//                 //tableCreator.setElementAttributeOf(plusIcon)("class", "material-icons");
-//                 //tableCreator.addInnerHtmlTo(plusIcon)("face");
-
-//                 tableCreator.addChildTo(addScoreButton)(plusIcon);
-
-//                 //tableCreator.setElementAttributeOf(addScoreButton)("onclick", "addScore(x,y)");
-
-//                 //console.log(addScoreButton.dataset);
-//                 tableCreator.addChildTo(newCell)(addScoreButton);
-//                 document.querySelector(".addScoreButton").style.cursor = "pointer";
-
-//                 // const cancelScoreButton = tableCreator.newElement("button");
-//                 // tableCreator.setElementAttributeOf(cancelScoreButton)("id", "cancelScoreButton");
-//                 // tableCreator.addChildTo(newCell)(cancelScoreButton);
-
-//                 const x = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.student;
-//                 const y = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.assignment;
-
-
-
-//                 addScoreButton.addEventListener('click', function() {
-//                     if(addScoreInputDivOpen == true) {
-//                         return;
-//                     }
-//                     addScoreInputDivOpen = true;
-                    
-//                     document.querySelector('#addScoreDiv').style.display = "block";
-    
-//                     state.pop();
-//                     state.pop();
-
-//                     state.push(addScoreButton.dataset.student);
-//                     state.push(addScoreButton.dataset.assignment);
-
-
-//                     console.log("+++++++++++**********************&&&&&&&&&&%%%%%");
-//                     document.querySelector('#addScoreDiv').className = "addStudentDiv";
-//                 });
-
-//                 //document.querySelector('#cancelScoreButton').addEventListener('click', cancelScore);
-
-
-// ////////////////////////////////////// ---------------------------------
-
-//                 //console.log(document.querySelector(`#student-${studsLoop}-assignment-${assignArrayLength}`));
-//             }
-
-// //////////  TOTALS ROW CREATION
-//             if(coursesArray[0].assignments.length == 1) {
-
-//                 // CREATE STUDENT TOTAL ROW
-//                     const studentTotalRow = tableCreator.newElement("tr");
-//                     tableCreator.setElementAttributeOf(studentTotalRow)("id", "studentTotalsRow");
-//                     tableCreator.setElementAttributeOf(studentTotalRow)("style", "background-color: rgb(255, 81, 0)");
-//                 // ADD ROW TO TABLE
-//                     //tableCreator.addChildTo(classTable)(studentTotalRow);
-//                     tableCreator.addInsideAfterLastChild(classTable)(studentTotalRow);
-
-//                 // CREATE HEADER TAG
-//                     const headerTag = tableCreator.newElement("th");
-//                 // ADD HEADER TAG TO ROW
-//                     tableCreator.addChildTo(studentTotalRow)(headerTag);
-//                     tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
-//                     tableCreator.addTextContentTo(headerTag)("");
-
-//                 // CREATE th ELEMENT
-//                     const totalTh = tableCreator.newElement("th");
-//                     tableCreator.setElementAttributeOf(totalTh)("id", `totalPossibleFinal-course${a}`);
-//                     const totalPossibleFinal = document.querySelector(`#totalPossibleFinal-course${a}`);
-//                     console.log(totalPossibleFinal);
-//                     tableCreator.addChildTo(studentTotalRow)(totalTh);
-//                     tableCreator.addTextContentTo(totalTh)("Total Possible Row");
-
-
-//             console.log(`${coursesArray[0].students} + + + + + + + + + + + + `);
-//             for(i=0; i < coursesArray[0].students.length; i++) {
-//                 console.log(i);
-//             }
-//                 for(i=0; i < coursesArray[0].students.length; i++) {
-//                 console.log(i);
-//                     console.log("TOTALS ROW TEST %%%$$$$%%%%$$$$%%%%$$$$");
-//                 // CREATE th HEADER FOR STUDENT TOTAL
-//                     const studentTotalHeader = tableCreator.newElement("th");
-//                 // SET CLASS OF NEW th ELEMENT
-//                     tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${i+1}-course${a}`);
-//                     console.log(studentTotalHeader);
-//                 // SET TEXT OF NEW th ELEMENT
-//                 console.log("550 550 550 550 550");
-//                 //testOneTwo();
-//                 //studentTotalBottom(better);
-//                 var better = i + 1;
-//                 console.log(better);
-//                 //console.log(studentTotalBottom(i));
-//                 // if(studentTotalBottom(i)) {
-//                 //     tableCreator.addTextContentTo(studentTotalHeader)("poop test");
-//                 // }
-
-//                     //var finalTotal = studentTotalBottom(better);
-//                     //console.log(finalTotal);
-//                     //tableCreator.addTextContentTo(studentTotalHeader)(`${finalTotal}`);
-//                 tableCreator.addTextContentTo(studentTotalHeader)("poop test");
-//                 // ADD th ELEMENT TO TOTALS ROW
-//                     tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
-//             }
-//         }
-// }
-
-
-
-
-
-
-
-// function addStudentToTablePersist() {
-//     console.log("addStudentToTablePersist");
-//     //console.log(courseName);
-
-//     const classText = document.querySelector(`#addStudentInputField-course${a}`).value;
-
-
-//     const studentName = new Student(classText);
-//     coursesArray[0].studArray = studentName;
-
-
-
-
-//     if(classText == ""){
-//         return;
-//     }
-
-//     document.querySelector('#classContainer').style.display = "block";
-//     document.querySelector('#addStudentDiv').style.display = "none";
-//     document.querySelector('#classContainer').className = "table_container";
-
-
-
-//     if(coursesArray[0].assignments.length < 1 && coursesArray[0].students.length < 1) {
-//         console.log("first condition test");
-//     // CREATE STUDENT NAME ROW
-//         const studentNameRow = tableCreator.newElement("tr");
-//         tableCreator.setElementAttributeOf(studentNameRow)("id", "studentNamesRow-course${a}`");
-//         tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
-//         tableCreator.addChildTo(classTable)(studentNameRow);
-
-//     // CREATE HEADER TAG
-//         const headerTag = tableCreator.newElement("th");
-//         tableCreator.addChildTo(studentNameRow)(headerTag);
-//         tableCreator.setElementAttributeOf(headerTag)("style", "width: 20px");
-//         tableCreator.addTextContentTo(headerTag)("");
-
-//     // CREATE th ELEMENT
-//         const totalTh = tableCreator.newElement("th");
-//         tableCreator.addChildTo(studentNameRow)(totalTh);
-//         tableCreator.addTextContentTo(totalTh)("TOTAL");
-//     }
-
-//     if(coursesArray[0].assignments.length < 1 ) {
-//                 console.log("second condition test");
-//             // ADD th ELEMENT TO STUDENT ROW
-//                 studentLabelArray.pop();
-//                 const studentId = coursesArray[0].students.length + 1;
-//                 const secondTh = tableCreator.newElement("th");
+    if(coursesArray[0].assignments.length < 1 ) {
+                console.log("second condition test");
+            // ADD th ELEMENT TO STUDENT ROW
+                studentLabelArray.pop();
+                const studentId = coursesArray[0].students.length + 1;
+                const secondTh = tableCreator.newElement("th");
                 
-//                 tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader-course${a}`);
-//                 tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+                tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader-course${a}`);
+                tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
 
-//                 const assignArrayLength = coursesArray[0].assignments.length;
-//             // SET CLASS OF NEW th ELEMENT
-//                 tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+                const assignArrayLength = coursesArray[0].assignments.length;
+            // SET CLASS OF NEW th ELEMENT
+                tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
 
-//             // CREATE NEW SPAN
-//                 const studentSpan = tableCreator.newElement("span");
-//                 console.log(studentSpan);
-//                 tableCreator.addChildTo(secondTh)(studentSpan);
-//                 //tableCreator.setElementAttributeOf(secondTh)("id", student-${studentId}-studentNameSpan`);
-//                 tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan-course${a}`);
+            // CREATE NEW SPAN
+                const studentSpan = tableCreator.newElement("span");
+                console.log(studentSpan);
+                tableCreator.addChildTo(secondTh)(studentSpan);
+                //tableCreator.setElementAttributeOf(secondTh)("id", student-${studentId}-studentNameSpan`);
+                tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan-course${a}`);
 
-//             // SET TEXT OF NEW th ELEMENT
-//                 const studentText = document.querySelector(`#addStudentInputField-course${a}`).value;
+            // SET TEXT OF NEW th ELEMENT
+                const studentText = document.querySelector(`#addStudentInputField-course${a}`).value;
 
-//                 studentName.name = studentText;              
-//                 tableCreator.addTextContentTo(studentSpan)(`${studentText}`);
+                studentName.name = studentText;              
+                tableCreator.addTextContentTo(studentSpan)(`${studentText}`);
 
-//             // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
-//                 const editStudentNameButton = tableCreator.newElement("button");
-//                 tableCreator.setElementAttributeOf(editStudentNameButton)("id", `student-${studentId}-editStudentNameButton-course${a}`); 
-//                 tableCreator.setElementAttributeOf(editStudentNameButton)("data-studentLabelId", `${studentId}`); 
+            // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
+                const editStudentNameButton = tableCreator.newElement("button");
+                tableCreator.setElementAttributeOf(editStudentNameButton)("id", `student-${studentId}-editStudentNameButton-course${a}`); 
+                tableCreator.setElementAttributeOf(editStudentNameButton)("data-studentLabelId", `${studentId}`); 
 
-//                 const plusIcon = tableCreator.newElement("i");
-//                         tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
+                const plusIcon = tableCreator.newElement("i");
+                        tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
         
-//                         tableCreator.addChildTo(editStudentNameButton)(plusIcon);
+                        tableCreator.addChildTo(editStudentNameButton)(plusIcon);
         
         
 
-//                 tableCreator.addChildTo(secondTh)(editStudentNameButton);
+                tableCreator.addChildTo(secondTh)(editStudentNameButton);
 
-//                 document.querySelector(`#student-${studentId}-editStudentNameButton-course${a}`).addEventListener("click", openEditStudentLabelDiv);
+                document.querySelector(`#student-${studentId}-editStudentNameButton-course${a}`).addEventListener("click", openEditStudentLabelDiv);
             
             
-//                 function openEditStudentLabelDiv() {
-//                     changeClassName("#classContainer")("blur");
+                function openEditStudentLabelDiv() {
+                    changeClassName("#classContainer")("blur");
 
-//                     console.log(editStudentNameButton.dataset.studentlabelid);
-//                     studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
-//                     console.log(studentLabelArray);
+                    console.log(editStudentNameButton.dataset.studentlabelid);
+                    studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
+                    console.log(studentLabelArray);
 
-//                     console.log("openEditStudentLabelDiv is invoked 1 1 1 1 1 1 1 ")
-//                     const editStudentLabelDiv = document.querySelector(`#addStudentLabelDiv-course${a}`);
-//                     tableCreator.setElementAttributeOf(editStudentLabelDiv)("class", "addStudentDiv");
-//                 }
+                    console.log("openEditStudentLabelDiv is invoked 1 1 1 1 1 1 1 ")
+                    const editStudentLabelDiv = document.querySelector(`#addStudentLabelDiv-course${a}`);
+                    tableCreator.setElementAttributeOf(editStudentLabelDiv)("class", "addStudentDiv");
+                }
     
     
-//                 document.querySelector(`#student-${studentId}-editStudentNameButton-course${a}`).style.cursor = "pointer";
+                document.querySelector(`#student-${studentId}-editStudentNameButton-course${a}`).style.cursor = "pointer";
 
-//                 console.log("ttttttttttttttttttttttttttttttttttt");
-//                 console.log(editStudentNameButton);
-//             // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
-//                 const first = document.getElementsByClassName(`${studentId}`);
-//                 studentsArray.push(first);
+                console.log("ttttttttttttttttttttttttttttttttttt");
+                console.log(editStudentNameButton);
+            // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
+                const first = document.getElementsByClassName(`${studentId}`);
+                studentsArray.push(first);
 
-//     }
+    }
 
-//     if(coursesArray[0].assignments.length >= 1) {
-//         console.log("third condition test");
-//         studentLabelArray.pop();
+    if(coursesArray[0].assignments.length >= 1) {
+        console.log("third condition test");
+        studentLabelArray.pop();
 
-//         // ADD th ELEMENT TO STUDENT ROW
-//             const studentId = studentsArray.length + 1;
-//             const secondTh = tableCreator.newElement("th");
-//             tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader-course${a}`);
+        // ADD th ELEMENT TO STUDENT ROW
+            const studentId = studentsArray.length + 1;
+            const secondTh = tableCreator.newElement("th");
+            tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameHeader-course${a}`);
 
-//             tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
+            tableCreator.addChildTo(document.getElementById("studentNamesRow"))(secondTh);
 
-//             const assignArrayLength = coursesArray[0].assignments.length;
-//         // SET CLASS OF NEW th ELEMENT
-//             tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
-//         // CREATE NEW SPAN
-//             const studentSpan = tableCreator.newElement("span");
-//             console.log(studentSpan);
-//             tableCreator.addChildTo(secondTh)(studentSpan);
-//             //tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameSpan-course${a}`);
-//             tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan-course${a}`);
+            const assignArrayLength = coursesArray[0].assignments.length;
+        // SET CLASS OF NEW th ELEMENT
+            tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
+        // CREATE NEW SPAN
+            const studentSpan = tableCreator.newElement("span");
+            console.log(studentSpan);
+            tableCreator.addChildTo(secondTh)(studentSpan);
+            //tableCreator.setElementAttributeOf(secondTh)("id", `student-${studentId}-studentNameSpan-course${a}`);
+            tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan-course${a}`);
 
-//         // SET TEXT OF NEW SPAN ELEMENT
-//             const assignmentText = document.querySelector('#addStudentInputField').value;
-//             tableCreator.addTextContentTo(studentSpan)(`${assignmentText}`);
-// console.log(secondTh);
+        // SET TEXT OF NEW SPAN ELEMENT
+            const assignmentText = document.querySelector('#addStudentInputField').value;
+            tableCreator.addTextContentTo(studentSpan)(`${assignmentText}`);
+console.log(secondTh);
 
-//         // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
-//             const editStudentNameButton = tableCreator.newElement("button");
-//             tableCreator.setElementAttributeOf(editStudentNameButton)("id", `student-${studentId}-editStudentNameButton-course${a}`); 
-//             tableCreator.setElementAttributeOf(editStudentNameButton)("data-studentLabelId", `${studentId}`); 
+        // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
+            const editStudentNameButton = tableCreator.newElement("button");
+            tableCreator.setElementAttributeOf(editStudentNameButton)("id", `student-${studentId}-editStudentNameButton-course${a}`); 
+            tableCreator.setElementAttributeOf(editStudentNameButton)("data-studentLabelId", `${studentId}`); 
 
-//             const plusIcon = tableCreator.newElement("i");
-//             tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
+            const plusIcon = tableCreator.newElement("i");
+            tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
 
-//             tableCreator.addChildTo(editStudentNameButton)(plusIcon);
+            tableCreator.addChildTo(editStudentNameButton)(plusIcon);
 
 
-//             tableCreator.addChildTo(secondTh)(editStudentNameButton);
-//             console.log(editStudentNameButton);
+            tableCreator.addChildTo(secondTh)(editStudentNameButton);
+            console.log(editStudentNameButton);
 
-//             document.querySelector(`#student-${studentId}-editStudentNameButton-course${a}`).style.cursor = "pointer";
+            document.querySelector(`#student-${studentId}-editStudentNameButton-course${a}`).style.cursor = "pointer";
 
-//             document.querySelector(`#student-${studentId}-editStudentNameButton-course${a}`).addEventListener("click", openEditStudentLabelDiv);
+            document.querySelector(`#student-${studentId}-editStudentNameButton-course${a}`).addEventListener("click", openEditStudentLabelDiv);
             
 
-//             function openEditStudentLabelDiv() {
+            function openEditStudentLabelDiv() {
 
-//                 changeClassName("#classContainer")("blur");
+                changeClassName("#classContainer")("blur");
 
-//                 console.log(editStudentNameButton.dataset.studentlabelid);
-//                 studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
-//                 console.log(studentLabelArray);
-
-
-//                console.log("openEditStudentLabelDiv is invoked 2 2 2 2 2 2 2 ")
-
-//                 const editStudentLabelDiv = document.querySelector('#addStudentLabelDiv');
-//                 tableCreator.setElementAttributeOf(editStudentLabelDiv)("class", "addStudentDiv");
-//             }
+                console.log(editStudentNameButton.dataset.studentlabelid);
+                studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
+                console.log(studentLabelArray);
 
 
-//         // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
-//             const first = document.getElementsByClassName(`${studentId}`);
-//             studentsArray.push(first);
-//         // ADD CELL TO EACH ASSIGNMENT FOR NEW STUDENT
-//             assignmentsArray.forEach((assignment, index) => {
-//                 var indexOne = index + 1;
-//         // CREATE AND ADD PLACEHOLDER CELL
-//                 const newCell = tableCreator.addCellTo(assignment)(-1);
-//                 console.log(newCell);
-//         // SET CLASS OF NEW PLACEHOLDER CELL
-//         console.log(studentId + " --- " + indexOne);
-//                 tableCreator.setElementAttributeOf(newCell)("class", "score");
-//                 tableCreator.setElementAttributeOf(newCell)("id", `student-${studentId}-assignment-${indexOne}-scoreCell-course${a}`);
+               console.log("openEditStudentLabelDiv is invoked 2 2 2 2 2 2 2 ")
+
+                const editStudentLabelDiv = document.querySelector('#addStudentLabelDiv');
+                tableCreator.setElementAttributeOf(editStudentLabelDiv)("class", "addStudentDiv");
+            }
 
 
-//                 //const score = document.querySelector('#scoreInputField').value;
-//         // CREATE AND ADD SPAN TO SCORE CELL
-//                 const span = tableCreator.newElement("span");
-//                 tableCreator.setElementAttributeOf(span)("id", `student-${studentId}-assignment-${indexOne}-scoreSpan-course${a}`);
-//                 tableCreator.addChildTo(newCell)(span);
-//                 tableCreator.addTextContentTo(span)("");
+        // PUSH NEW STUDENT th ELEMENT TO STUDENTS ARRAY
+            const first = document.getElementsByClassName(`${studentId}`);
+            studentsArray.push(first);
+        // ADD CELL TO EACH ASSIGNMENT FOR NEW STUDENT
+            assignmentsArray.forEach((assignment, index) => {
+                var indexOne = index + 1;
+        // CREATE AND ADD PLACEHOLDER CELL
+                const newCell = tableCreator.addCellTo(assignment)(-1);
+                console.log(newCell);
+        // SET CLASS OF NEW PLACEHOLDER CELL
+        console.log(studentId + " --- " + indexOne);
+                tableCreator.setElementAttributeOf(newCell)("class", "score");
+                tableCreator.setElementAttributeOf(newCell)("id", `student-${studentId}-assignment-${indexOne}-scoreCell-course${a}`);
 
 
-//         // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
-//                 const addScoreButton = tableCreator.newElement("button");
-//                 tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`);
-//                 tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studentId}`);
-//                 tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${indexOne}`);
-//                 tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
-//                 tableCreator.setElementAttributeOf(addScoreButton)("style", "cursor: pointer");
-
-//                 const plusIcon = tableCreator.newElement("i");
-//         //<i class="material-icons">face</i>
-//                 tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
-
-//                 tableCreator.addChildTo(addScoreButton)(plusIcon);
-
-//                 console.log(addScoreButton);
-
-//             tableCreator.addChildTo(newCell)(addScoreButton);
+                //const score = document.querySelector('#scoreInputField').value;
+        // CREATE AND ADD SPAN TO SCORE CELL
+                const span = tableCreator.newElement("span");
+                tableCreator.setElementAttributeOf(span)("id", `student-${studentId}-assignment-${indexOne}-scoreSpan-course${a}`);
+                tableCreator.addChildTo(newCell)(span);
+                tableCreator.addTextContentTo(span)("");
 
 
-//             console.log(document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`));
+        // CREATE PLUS BUTTON TO OPEN SCORE POP-UP
+                const addScoreButton = tableCreator.newElement("button");
+                tableCreator.setElementAttributeOf(addScoreButton)("id", `student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`);
+                tableCreator.setElementAttributeOf(addScoreButton)("data-student", `${studentId}`);
+                tableCreator.setElementAttributeOf(addScoreButton)("data-assignment", `${indexOne}`);
+                tableCreator.setElementAttributeOf(addScoreButton)("class", "addScoreButton");
+                tableCreator.setElementAttributeOf(addScoreButton)("style", "cursor: pointer");
 
-//                 const x = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`).dataset.student;
-//                 const y = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`).dataset.assignment;
-//                 console.log(x);
+                const plusIcon = tableCreator.newElement("i");
+        //<i class="material-icons">face</i>
+                tableCreator.setElementAttributeOf(plusIcon)("class", "fa fa-plus");
 
-//                 addScoreButton.addEventListener('click', function() {
+                tableCreator.addChildTo(addScoreButton)(plusIcon);
 
-//                     document.querySelector('#addScoreDiv').style.display = "block";
+                console.log(addScoreButton);
 
-//                     state.pop();
-//                     state.pop();
-
-//                     console.log(addScoreButton.dataset.student);
-//                     state.push(addScoreButton.dataset.student);
-//                     console.log(addScoreButton.dataset.assignment);
-//                     state.push(addScoreButton.dataset.assignment);
-
-//                     console.log(state);
-
-//                     console.log("+++++++++++**********************&&&&&&&&&&%%%%%");
-
-//                     document.querySelector('#addScoreDiv').className = "addStudentDiv";
+            tableCreator.addChildTo(newCell)(addScoreButton);
 
 
-//                 });
+            console.log(document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`));
+
+                const x = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`).dataset.student;
+                const y = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`).dataset.assignment;
+                console.log(x);
+
+                addScoreButton.addEventListener('click', function() {
+
+                    document.querySelector('#addScoreDiv').style.display = "block";
+
+                    state.pop();
+                    state.pop();
+
+                    console.log(addScoreButton.dataset.student);
+                    state.push(addScoreButton.dataset.student);
+                    console.log(addScoreButton.dataset.assignment);
+                    state.push(addScoreButton.dataset.assignment);
+
+                    console.log(state);
+
+                    console.log("+++++++++++**********************&&&&&&&&&&%%%%%");
+
+                    document.querySelector('#addScoreDiv').className = "addStudentDiv";
 
 
-//         //addScoreClick();
-//             //document.querySelector('#cancelScoreButton').addEventListener('click', cancelScore);
-
-//     })
+                });
 
 
+        //addScoreClick();
+            //document.querySelector('#cancelScoreButton').addEventListener('click', cancelScore);
 
-
-//             const Id = coursesArray[0].students.length;
-//             // CREATE th HEADER FOR STUDENT TOTAL
-//                 const studentTotalHeader = tableCreator.newElement("th");
-//             // SET CLASS OF NEW th ELEMENT
-//                 tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${Id}-course${a}`);
-//             // SET TEXT OF NEW th ELEMENT
-//             //console.log(studentTotalBottom(1));
-//             //const assignmentText = document.querySelector('#addStudentInputField').value;
-//             //var finalTotal = studentTotalBottom((studentsArray.length));
-//             //console.log(finalTotal);
-
-//             //tableCreator.addTextContentTo(studentTotalHeader)(`${newTotal}`);
-
-//             tableCreator.addTextContentTo(studentTotalHeader)("student poop test");
-
-
-//                 //tableCreator.addTextContentTo(studentTotalHeader)("1299");
-
-//             // ADD th ELEMENT TO TOTALS ROW
-//                 tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
-
-//     }
-// }
+    })
 
 
 
-// function changeValues() {
-//     let score = document.querySelector('#student-1-assignment-2');
-//     let scoreDeux = document.querySelector('#student-2-assignment-3');
-//     score.value = "42";
-//     scoreDeux.value = "420 ";
-//     console.log(score)
-// }
+
+            const Id = coursesArray[0].students.length;
+            // CREATE th HEADER FOR STUDENT TOTAL
+                const studentTotalHeader = tableCreator.newElement("th");
+            // SET CLASS OF NEW th ELEMENT
+                tableCreator.setElementAttributeOf(studentTotalHeader)("id", `student-${Id}-course${a}`);
+            // SET TEXT OF NEW th ELEMENT
+            //console.log(studentTotalBottom(1));
+            //const assignmentText = document.querySelector('#addStudentInputField').value;
+            //var finalTotal = studentTotalBottom((studentsArray.length));
+            //console.log(finalTotal);
+
+            //tableCreator.addTextContentTo(studentTotalHeader)(`${newTotal}`);
+
+            tableCreator.addTextContentTo(studentTotalHeader)("student poop test");
+
+
+                //tableCreator.addTextContentTo(studentTotalHeader)("1299");
+
+            // ADD th ELEMENT TO TOTALS ROW
+                tableCreator.addChildTo(document.getElementById("studentTotalsRow"))(studentTotalHeader);
+
+    }
+}
+
+
+
+function changeValues() {
+    let score = document.querySelector('#student-1-assignment-2');
+    let scoreDeux = document.querySelector('#student-2-assignment-3');
+    score.value = "42";
+    scoreDeux.value = "420 ";
+    console.log(score)
+}
 
 
 // BBBB                                                 BB
@@ -3033,8 +2919,11 @@ const autoAssignmentsArray = ["gank", "asdf", "fart"];
 
 
 (function automateClassTable() {
-    
-for(a = 0; a < coursesArray.length; a++) {
+    console.log("PERSIST TABLE HAST BEEN INITIATED!!!!!!!!!!!!!");
+
+    //console.log(a);
+    for(a = 0; a < coursesArray.length; a++) {
+console.log("persist model loop GO!!!");
 
     const courseMarkArray = [];
     courseMarkArray.push(a);
