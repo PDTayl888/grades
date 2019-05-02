@@ -1,26 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////
 
 // UNIQUE ID GENERATOR ///////////////
@@ -29,50 +7,50 @@ const courseMarkArray = [];
 
 var uniqueId = 'xxx-xxxx-xxx'.replace(/[x]/g, () => Math.random() * 9 | 0);
 
-console.log(uniqueId);
-
 var coursesArray = [];
 
 //const assignmentsArray = [];
 
 //const studentsArray = [];
 
-
 class Course {
     constructor(title) {
         this.title = title;
         this.id = 'xxx-xxxx-xxx'.replace(/[x]/g, () => Math.random() * 9 | 0);
-        this.scores = [];
         this.students = [];
         this.assignments = [];
-    }
+        this.spans = [];
+    
+    this.spanArraySet = function(span) {
+        return this.spans.push(span);
+    };
 
-    get courseName() {
-        return this.title;
-    }
+    this.spanArray = function(spanIndex) {
+        return this.spans[spanIndex];
+    };
 
-    set courseName(newName) {
-        this.title = newName;
-    }
-
-
-    get assArray() {
+    this.assArrayGet = function() {
         return this.assignments;
-    }
+    };
 
-    set assArray(param) {
+    this.assArray = function(param) {
         this.assignments.push(param);
-    }
+    };
 
-    get studArray() {
+    this.studArrayGet = function() {
         return this.students;
-    }
+    };
 
-    set studArray(param) {
+    this.studArray = function(param) {
         this.students.push(param);
+    };
+
     }
 }
 
+const poopy = new Course;
+poopy.assArray('shit');
+console.log(poopy.assArrayGet()[0]);
 
 class Assignment {
     constructor(title, newRow) {
@@ -82,14 +60,15 @@ class Assignment {
         this.scores = [];
         this.newRow = newRow;
         this.totalPossible = '';
-    }
 
-    get row() {
+    this.rowGet = function() {
         return this.newRow;
-    }
+    };
 
-    set row(row) {
+    this.row = function(row) {
         return this.newRow = row;
+    };
+
     }
 }
 
@@ -98,7 +77,6 @@ class Student {
         this.id = 'xxx-xxxx-xxx'.replace(/[x]/g, () => Math.random() * 9 | 0);
         this.studentName = name;
         this.assignments = [];
-        this.scores = [];
         this.row = row;
     }
 
@@ -174,7 +152,8 @@ function init() {
     document.getElementById("cancelButtonAssignment").style.cursor = "pointer";
 
 
-
+// CLASS GRADES PERSIST BUTTON
+    document.getElementById('hideShowGradesPersistButton').addEventListener('click', hideShowGradesDivPersist);
 // CLASS GRADES TABLE LISTENERS
     document.getElementById('addClassButton').addEventListener('click', addClassInputFormOpen);
     document.getElementById('addButtonClass').addEventListener('click', addClassToTable);
@@ -205,8 +184,8 @@ function init() {
     document.getElementById("addAssignmentButton").style.cursor = "pointer";
 
     document.getElementById("addButtonTest").style.cursor = "pointer";
-    console.log(document.getElementById("cancelButtonClass"));
-    console.log(document.getElementById("canceEditScore"));
+    //console.log(document.getElementById("cancelButtonClass"));
+    //console.log(document.getElementById("canceEditScore"));
     document.getElementById("cancelEditScore").style.cursor = "pointer";
 
     document.getElementById("addButtonStudentLabel").style.cursor = "pointer";
@@ -425,13 +404,48 @@ const tableCreator = {
 
 
 
+function hideShowGradesDivPersist() {
+    console.log("HIDE SHOW GRADES DIV PERSIST EVENT LISTENER IS WORKING ! ! ! !");
+    console.log(document.getElementById('classContainer-coursePersist').className);
+    if(document.getElementById('classContainer-coursePersist').className == 'hide') {
+        changeClassName("#classContainer-coursePersist")("table_container");
+        console.log(document.getElementById('classContainer-coursePersist').className);
+    } else {
+        console.log('else shide show confirm');
+        changeClassName("#classContainer-coursePersist")("hide");
+        console.log(document.getElementById('classContainer-coursePersist').className);
+    }
+}
+
+
+
 function editStudentLabel() {
+    console.log('editStudentLabel running');
     const studentLabelInput = document.querySelector('#addStudentLabelInputField').value;
+    console.log(studentLabelInput);
+
+    const x = state[0];
+    // const y = state[1];
+
+    // console.log(y);
+    console.log(x);
+    const gork = x - 1;
+    console.log(gork);
+
+    // SET NEW NAME ON STUDENT OBJECT
+    coursesArray[0].students[gork].name = studentLabelInput;
+    console.log(coursesArray[0].students[gork].name);
+    localStorage.setItem('noob', JSON.stringify(coursesArray));
+    const data = JSON.parse(localStorage.getItem('noob'));
+    console.log(data);
+    console.log(data[0].students[gork].studentName);
+
+
     console.log(document.querySelector(`#student-${studentLabelArray[0]}-studentNameHeader`));
-    const studentSpan = document.querySelector(`#student-${studentLabelArray[0]}-studentNameSpan`);
+    const studentSpan = document.querySelector(`#student-${studentLabelArray[0 ]}-studentNameSpan`);
     console.log(studentSpan);
     studentLabelArray.pop();
-    tableCreator.addTextContentTo(studentSpan)(studentLabelInput);
+    tableCreator.addTextContentTo(studentSpan)(data[0].students[gork].studentName);
 
     console.log(studentSpan);
 
@@ -483,11 +497,20 @@ function editAssignmentLabel() {
     const assignmentLabelInput = document.querySelector('#addAssignmentLabelInputField').value;
     console.log(assignmentLabelArray[0]);
 
+    // SET NEW TITLE ON ASSIGNMENT OBJECT
+        coursesArray[0].assignments[0].title = assignmentLabelInput;
+        console.log(coursesArray[0].assignments[0].title);
+        localStorage.setItem('noob', JSON.stringify(coursesArray));
+        const data = JSON.parse(localStorage.getItem('noob'));
+        console.log(data);
+        console.log(data[0].assignments[0].title);
+    
+
     const assignmentSpan = document.querySelector(`#assignment-${assignmentLabelArray[0]}-assignmentSpan`);
     console.log(assignmentSpan);
     assignmentLabelArray.pop();
 
-    tableCreator.addTextContentTo(assignmentSpan)(assignmentLabelInput);
+    tableCreator.addTextContentTo(assignmentSpan)(data[0].assignments[0].title);
     console.log(assignmentSpan);
 
     const addAssignmentLabelInputDiv = document.querySelector('#addAssignmentLabelDiv');
@@ -537,15 +560,26 @@ function cancelEditAssignmentLabelPersist() {
 
 function editTotalPossible() {
     console.log("editTotalPossible hasteth beeneth invokedeth");
-    const assignmentLabelInput = document.querySelector('#editTotalPossibleInputField').value;
+    const totalPossibleInput = document.querySelector('#editTotalPossibleInputField').value;
     console.log(totalPossibleArray[0]);
+
+    const totalPoss = totalPossibleArray[0] - 1;
+
+    // SET NEW TOTAL POSSIBLE ON ASSIGNMENT OBJECT
+        coursesArray[0].assignments[totalPoss].totalPossible = totalPossibleInput;
+        console.log(coursesArray[0].assignments[totalPoss].totalPossible);
+        localStorage.setItem('noob', JSON.stringify(coursesArray));
+        const data = JSON.parse(localStorage.getItem('noob'));
+        console.log(data);
+        console.log(data[0].assignments[totalPoss].totalPossible);
+    
 
     const totalPossibleSpan = document.querySelector(`#assignment-${totalPossibleArray[0]}-totalPossibleSpan`);
     console.log(totalPossibleSpan);
     console.log(totalPossibleSpan.value);
     totalPossibleArray.pop();
 
-    tableCreator.addTextContentTo(totalPossibleSpan)(assignmentLabelInput);
+    tableCreator.addTextContentTo(totalPossibleSpan)(data[0].assignments[totalPoss].totalPossible);
     console.log(totalPossibleSpan);
 
     const addAssignmentLabelInputDiv = document.querySelector('#editTotalPossibleDiv');
@@ -621,7 +655,7 @@ function changeDisplay(idOrClass) {
 }
 
 function changeClassName(idOrClass) {
-    console.log(idOrClass);
+    //console.log(idOrClass);
     return function(openClose) {
         document.querySelector(`${idOrClass}`).className = `${openClose}`;
     }
@@ -671,10 +705,18 @@ function addScoreClick() {
     document.querySelector('#addScoreDiv').style.display = "none";
     addScoreInputDivOpen = false;
 
-
     console.log("addScoreClick working");
     const x = state[0];
     const y = state[1];
+
+    console.log(y);
+    console.log(x);
+    const gork = x - 1;
+    console.log(coursesArray[0].assignments);
+    coursesArray[0].assignments[y - 1].scores.splice(gork,1,gork);
+
+    localStorage.setItem('noob', JSON.stringify(coursesArray));
+    console.log(JSON.parse(localStorage.getItem('noob')));
 
 
     console.log(x);
@@ -684,14 +726,22 @@ function addScoreClick() {
     console.log(span);
     const score = document.querySelector('#scoreInputField').value;
     console.log(score);
-    tableCreator.addTextContentTo(span)(`${score}`);
 
+    // SET NEW SCORE ON STUDENT OBJECT
+    coursesArray[0].assignments[y - 1].scores[x - 1] = score;
+    console.log(coursesArray[0].assignments[y -1].scores[x - 1]);
+    localStorage.setItem('noob', JSON.stringify(coursesArray));
+    const data = JSON.parse(localStorage.getItem('noob'));
+    console.log(data);
+    console.log(data[0].assignments[y - 1].scores[x - 1]);
+
+    tableCreator.addTextContentTo(span)(coursesArray[0].assignments[y - 1].scores[x - 1]);
 
     console.log(x);
 
     const newTotal = addScore(x, y);
-
-    console.log(newTotal);
+    
+    
     const totalText = document.querySelector(`#student-${x}`);
     console.log(totalText);
     tableCreator.addTextContentTo(totalText)(`${newTotal}`);
@@ -1520,7 +1570,9 @@ return total;
 
 
 const checkStor = JSON.parse(localStorage.getItem('noob'));
+if(checkStor) {
 console.log(checkStor);
+}
 
 console.log(coursesArray);
 if(checkStor) {
@@ -1531,8 +1583,12 @@ if(checkStor) {
 
 console.log(coursesArray);
 
+
+
+
+
 function addClassToTable() {
-    console.log("addClassToTable");
+    console.log("addClassToTablennnnnnnnnnnnnnnnnnnnnnn");
 
     const courseTitle = document.querySelector('#addClassInputField').value;
 
@@ -1637,8 +1693,7 @@ function addStudentToTable() {
         tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
         tableCreator.addChildTo(classTable)(studentNameRow);
 
-    
-
+ 
     // CREATE HEADER TAG
         const headerTag = tableCreator.newElement("th");
         tableCreator.addChildTo(studentNameRow)(headerTag);
@@ -1652,7 +1707,7 @@ function addStudentToTable() {
     }
 
     const studentName = new Student(classText);
-    coursesArray[0].studArray = studentName;
+    coursesArray[0].studArray(studentName);
     console.log(coursesArray[0].students);
 
     console.log(coursesArray);
@@ -1679,6 +1734,8 @@ console.log(coursesArray[0].assignments.length);
                 tableCreator.setElementAttributeOf(secondTh)("class", `${studentId}`);
 
             // CREATE NEW SPAN
+
+            //student-${studentId}-studentNameSpan
                 const studentSpan = tableCreator.newElement("span");
                 console.log(studentSpan);
                 tableCreator.addChildTo(secondTh)(studentSpan);
@@ -1715,6 +1772,7 @@ console.log(coursesArray[0].assignments.length);
 
                     console.log(editStudentNameButton.dataset.studentlabelid);
                     studentLabelArray.push(editStudentNameButton.dataset.studentlabelid);
+                    state.push(editStudentNameButton.dataset.studentlabelid);
                     console.log(studentLabelArray);
 
                     console.log("openEditStudentLabelDiv is invoked 1 1 1 1 1 1 1 ")
@@ -1762,6 +1820,8 @@ console.log(coursesArray[0].assignments.length);
             const assignmentText = document.querySelector('#addStudentInputField').value;
             tableCreator.addTextContentTo(studentSpan)(`${assignmentText}`);
 console.log(secondTh);
+
+        // ADD SCORE PLACEHOLDER TO ASSIGNMENT OBJECT
 
         // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
             const editStudentNameButton = tableCreator.newElement("button");
@@ -1842,9 +1902,17 @@ console.log(secondTh);
 
             console.log(document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`));
 
+
                 const x = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`).dataset.student;
                 const y = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton`).dataset.assignment;
+                console.log(y);
                 console.log(x);
+            // ADD PLACEHOLDER TO SCORES ARRAY IN ASSIGNMENT OBJECT
+            console.log(coursesArray[0].assignments);
+                coursesArray[0].assignments[y - 1].scores.push('');
+    
+                localStorage.setItem('noob', JSON.stringify(coursesArray));
+                console.log(JSON.parse(localStorage.getItem('noob')));
 
                 addScoreButton.addEventListener('click', function() {
 
@@ -1943,7 +2011,7 @@ function addAssignmentToTable() {
 
     const assignmentTitle = new Assignment(classText, "");
     console.log(assignmentTitle);
-    coursesArray[0].assArray = assignmentTitle;
+    coursesArray[0].assArray(assignmentTitle);
     console.log(coursesArray[0].assignments);
 
     console.log(coursesArray);
@@ -2011,6 +2079,8 @@ function addAssignmentToTable() {
 
             changeClassName("#classContainer")("blur");
 
+            
+
             console.log(editAssignmentNameButton.dataset.assignmentid);
             assignmentLabelArray.push(editAssignmentNameButton.dataset.assignmentid);
             console.log(assignmentLabelArray);
@@ -2032,7 +2102,7 @@ function addAssignmentToTable() {
         //const nextAssignment = new Assignment(assignmentText, assignmentRow);
         console.log(coursesArray[0].assignments);
         console.log(correctCell);
-        coursesArray[0].assignments[correctCell].row = assignmentRow;
+        coursesArray[0].assignments[correctCell].row(assignmentRow);
         console.log(coursesArray[0].assignments[0].newRow);
 
         assignmentsArray.push(assignmentRow);
@@ -2149,6 +2219,14 @@ function addAssignmentToTable() {
 
                 const x = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.student;
                 const y = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.assignment;
+                console.log(y);
+                console.log(x);
+            // ADD PLACEHOLDER TO SCORES ARRAY IN ASSIGNMENT OBJECT
+            console.log(coursesArray[0].assignments);
+            coursesArray[0].assignments[y - 1].scores.push('');
+
+            localStorage.setItem('noob', JSON.stringify(coursesArray));
+            console.log(JSON.parse(localStorage.getItem('noob')));
 
 
 
@@ -2180,7 +2258,7 @@ function addAssignmentToTable() {
             }
 
 //////////  TOTALS ROW CREATION
-            console.log(coursesArray[0].assignments);
+            //console.log(coursesArray[0].assignments);
             if(coursesArray[0].assignments.length == 1) {
 
                 // CREATE STUDENT TOTAL ROW
@@ -2252,7 +2330,7 @@ function addAssignmentToTablePersist() {
     const classText = document.querySelector(`#addAssignmentInputField-course${a}`).value;
 
     const studentName = new Student(classText);
-    coursesArray[0].studArray = studentName;
+    coursesArray[0].studArray(studentName);
 
 
 
@@ -2477,6 +2555,11 @@ function addAssignmentToTablePersist() {
 
                 const x = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.student;
                 const y = document.querySelector(`#student-${studsLoop}-assignment-${assignmentId}-scoreButton`).dataset.assignment;
+            //     console.log(y);
+            //     console.log(x);
+
+            // // ADD PLACEHOLDER TO SCORES ARRAY IN ASSIGNMENT OBJECT
+            //     coursesArray[0].assignments[y - 1].scores.push(3);
 
 
 
@@ -2581,7 +2664,7 @@ function addStudentToTablePersist() {
 
 
     const studentName = new Student(classText);
-    coursesArray[0].studArray = studentName;
+    coursesArray[0].studArray(studentName);
 
 
 
@@ -2790,7 +2873,11 @@ console.log(secondTh);
 
                 const x = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`).dataset.student;
                 const y = document.querySelector(`#student-${studentId}-assignment-${indexOne}-scoreButton-course${a}`).dataset.assignment;
-                console.log(x);
+                // console.log(y);
+                // console.log(x);
+                // // ADD PLACEHOLDER TO SCORES ARRAY IN ASSIGNMENT OBJECT
+                //     coursesArray[0].assignments[y - 1].scores.push(4);
+
 
                 addScoreButton.addEventListener('click', function() {
 
@@ -2928,14 +3015,16 @@ console.log("persist model loop GO!!!");
     const courseMarkArray = [];
     courseMarkArray.push(a);
 
-    if(coursesArray[a].assignments.length >= 1) {
+    if(coursesArray[a].assignments.length >= 1) { 
         console.log("automateClassTable is up and running yall!!!!!");
-        const classText = coursesArray[1].title;
+        const classText = coursesArray[a].title;
         console.log(classText);
 
         if(classText == ""){
             return;
         }
+
+    classDivPersist = document.querySelector('#classContainer');
 
     classDiv.style.display = "block";
     document.querySelector("#addClassDiv").style.display = "none";
@@ -2946,7 +3035,7 @@ console.log("persist model loop GO!!!");
         console.log(classTable);
         tableCreator.setElementAttributeOf(classTable)("id", `classTable-course${a}`);
         tableCreator.setElementAttributeOf(classTable)("align", "center");
-        tableCreator.addChildTo(classDiv)(classTable);
+        tableCreator.addChildTo(classDivPersist)(classTable);
 
     // CREATE COLUMN
         const colOne = tableCreator.newElement("col");
@@ -2978,8 +3067,7 @@ console.log("persist model loop GO!!!");
         tableCreator.addChildTo(firstTableHeader)(classNameHeaderTag);
     }
 
-    console.log(coursesArray[1].assignments);
-
+console.log(classTable);
     console.log("addStudentToTable");
     for(i=0; i<coursesArray[a].assignments.length; i++) {
         const assignmentText = coursesArray[a].assignments[i].title;
@@ -2999,7 +3087,7 @@ console.log("persist model loop GO!!!");
             const studentNameRow = tableCreator.newElement("tr");
             tableCreator.setElementAttributeOf(studentNameRow)("id", `studentNamesRow-course${a}`);
             tableCreator.setElementAttributeOf(studentNameRow)("style", "background-color: rgb(255, 81, 0)");
-            console.log(classTable);
+            //  console.log(classTable);
 
             tableCreator.addChildTo(classTable)(studentNameRow);
 
@@ -3039,7 +3127,9 @@ console.log("persist model loop GO!!!");
         tableCreator.setElementAttributeOf(studentSpan)("id", `student-${studentId}-studentNameSpan-course${a}`);
 
     // SET TEXT OF NEW th ELEMENT
-        const autoStudentName = coursesArray[a].students[k].name;
+        const autoStudentName = coursesArray[a].students[k].studentName;
+        console.log(coursesArray[a].students);
+        console.log(autoStudentName);
         tableCreator.addTextContentTo(studentSpan)(`${autoStudentName}`);
 
     // CREATE BUTTON TO OPEN ADD STUDENT LABEL DIV
@@ -3310,10 +3400,6 @@ console.log(coursesArray[a].assignments.length);
         console.log(autoAssignmentsArray.length);
 
 
-
-
-
-
     }
 
 
@@ -3368,8 +3454,7 @@ console.log("weird behavior testtttttttttttttttttttt");
 
         courseMarkArray.pop();
 }
-})
-//();
+})();
 
 
 // BBBB                                                 BB

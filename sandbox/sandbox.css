@@ -43,6 +43,17 @@ input   {
     border: 2px solid green;
 }
 
+#hideShowGradesDivPersist {
+    display: block;
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 310px;
+    /*background-color: seagreen;*/
+    border-radius: 22px;
+    padding: 11px;
+    border: 2px solid green;
+}
+
 .hide {
     display: none;
 }
